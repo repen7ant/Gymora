@@ -2,10 +2,56 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gymora.Diet">
-    <VerticalStackLayout>
-        <Label 
-            Text="To be made..."
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Shell.TitleView>
+        <Label Text="Калькулятор калорий" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="18"
+               FontAttributes="Bold"/>
+    </Shell.TitleView>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Picker x:Name="GenderPicker" Title="Пол" HorizontalOptions="Center">
+                <Picker.Items>
+                    <x:String>Мужчина</x:String>
+                    <x:String>Женщина</x:String>
+                </Picker.Items>
+            </Picker>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                <VerticalStackLayout>
+                    <Label Text="Возраст"></Label>
+                    <Entry x:Name="AgeEntry" Placeholder="лет" Keyboard="Numeric"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Вес"></Label>
+                    <Entry x:Name="WeightEntry" Placeholder="кг" Keyboard="Numeric"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Рост"></Label>
+                    <Entry x:Name="HeightEntry" Placeholder="см" Keyboard="Numeric"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <Picker x:Name="ActivityPicker" Title="Уровень активности">
+                <Picker.Items>
+                    <x:String>Небольшие физические нагрузки</x:String>
+                    <x:String>Легкие физические нагрузки 1-3 дня в неделю</x:String>
+                    <x:String>Умеренные физические нагрузки 3-5 дней в неделю</x:String>
+                    <x:String>Интенсивные физические нагрузки 6-7 дней в неделю</x:String>
+                    <x:String>Очень тяжелая физическая нагрузка или работа</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Button Text="Рассчитать" Clicked="OnCalculateClicked" />
+
+            <Grid x:Name="ResultGrid"
+                  ColumnDefinitions="*, Auto"
+                  RowSpacing="10"
+                  Padding="10"
+                  IsVisible="False">
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

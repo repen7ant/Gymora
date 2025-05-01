@@ -8,9 +8,9 @@
             calendar.SelectedDate = DateTime.Now;
         }
 
-        private void OnProfileIconClicked(object sender, EventArgs e)
+        private async void OnProfileIconClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new ProfilePage());
         }
 
         private void calendar_OnDateSelected(object sender, DateTime e)
