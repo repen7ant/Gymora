@@ -1,0 +1,98 @@
+[
+  {
+    "Name": "GreenFitness",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/firm/70000001063026484?m=60.599801%2C56.829805%2F16",
+    "Rating": 4.4,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test1.png",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test2.png",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test3.png"
+    ],
+    "Location": "ул. 8 марта, 46",
+    "Prices": [
+      {
+        "name": "Lunch (c 12:00 до 16:00)",
+        "prices": {
+          "12 месяцев": 12000,
+          "9 месяцев": 11000,
+          "6 месяцев": 9000
+        }
+      },
+      {
+        "name": "Безлимит (24/7, групповые программы включены в стоимость карты)",
+        "prices": {
+          "12 месяцев": 29000,
+          "9 месяцев": 24000,
+          "6 месяцев": 17000
+        }
+      },
+      {
+        "name": "Дневной (с 7:00 до 17:00, в выходные дни — круглосуточно)",
+        "prices": {
+          "12 месяцев": 19000,
+          "9 месяцев": 16000,
+          "6 месяцев": 12000
+        }
+      },
+      {
+        "name": "Ночной (с 0:00 до 7:00)",
+        "prices": {
+          "12 месяцев": 12000,
+          "9 месяцев": 11000,
+          "6 месяцев": 9000
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Круглосуточно"
+    ],
+    "Number": "+7 (343) 363‒30‒03, +7 (922) 138‒31‒73",
+    "Website": "greenfit-ekb.ru",
+    "Latitude": 56.83496545091609,
+    "Longitude": 60.55616087455913
+  },
+  {
+    "Name": "AversFit",
+    "_2GISLink": "https://go.2gis.com/3XxhB",
+    "Rating": 4.5,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test1.png",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test2.png",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test3.png"
+    ],
+    "Location": "ул. Шейнкмана, 21",
+    "Prices": [
+      {
+        "name": "Дневной (пн—пт до 17:00, сб—вс с 9:00 до 23:00, все зоны клуба, групповые тренировки, стартовые тренировки, заморозка карты)",
+        "prices": {
+          "6 месяцев": 34000,
+          "9 месяцев": 45000,
+          "12 месяцев": 56000
+        }
+      },
+      {
+        "name": "Стандарт (посещение клуба в часы работы, все зоны клуба, групповые тренировки по расписанию, стартовые тренировки, заморозка карты)",
+        "prices": {
+          "3 месяца": 20900,
+          "6 месяцев": 39000,
+          "9 месяцев": 53000,
+          "12 месяцев": 66000
+        }
+      },
+      {
+        "name": "Максимум (посещение клуба в часы работы, все зоны клуба, групповые тренировки по расписанию, 20 персональных тренировок, 90 дней заморозки, 50 минут солярия, аренда шкафчика)",
+        "prices": {
+          "12 месяцев": 91000
+        }
+      }
+    ],
+    "WorkingHours": [
+      "пн — пт: с 07:00 до 23:00",
+      "сб — вс: с 09:00 до 23:00"
+    ],
+    "Number": "+7 (343) 389‒24‒00",
+    "Website": "aversfit.ru",
+    "Latitude": 56.83958486981719,
+    "Longitude": 60.58591225314231
+  }
+]

@@ -1,0 +1,104 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gymora.GymDetailPage"
+             BackgroundColor="Transparent">
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        <Frame WidthRequest="400" 
+               HeightRequest="600"
+               CornerRadius="20"
+               Padding="0"
+               BackgroundColor="Black">
+
+            <ScrollView>
+                <VerticalStackLayout Spacing="10" Padding="15">
+                    <!-- Заголовок с рейтингом -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout Grid.Column="0">
+                            <Label x:Name="NameLabel" FontSize="24" FontAttributes="Bold" TextColor="White"/>
+                            <Label x:Name="AddressLabel" FontSize="16" TextColor="White"/>
+                        </VerticalStackLayout>
+
+                        <!-- Кнопка рейтинга с иконкой звезды -->
+                        <HorizontalStackLayout Grid.Column="1" Spacing="5">
+                            <Image Source="star.png" HeightRequest="20" WidthRequest="20"/>
+                            <Label x:Name="RatingLabel" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+
+                            <HorizontalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRatingClicked"/>
+                            </HorizontalStackLayout.GestureRecognizers>
+                        </HorizontalStackLayout>
+                    </Grid>
+
+                    <!-- Карусель изображений -->
+                    <CarouselView x:Name="ImagesCarousel" 
+                                 HeightRequest="200"
+                                 Loop="True">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}" 
+                                       Aspect="AspectFill"
+                                       HeightRequest="200"/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+                    <!-- Цены -->
+                    <Label Text="Абонементы:" FontSize="18" TextColor="White" HorizontalOptions="Center"/>
+                    <VerticalStackLayout x:Name="PricesContainer" Spacing="5"/>
+
+                    <!-- График работы -->
+                    <Frame BackgroundColor="GreenYellow" 
+                           Padding="10"
+                           HorizontalOptions="Center">
+                        <VerticalStackLayout x:Name="HoursContainer" Spacing="5"/>
+                    </Frame>
+
+                    <!-- Разделительная линия -->
+                    <BoxView HeightRequest="1" 
+                             Color="White" 
+                             Margin="0,10"
+                             HorizontalOptions="Fill"/>
+
+                    <!-- Контакты -->
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto">
+                        <Image Grid.Row="0" Grid.Column="0" 
+                               Source="phone.png" 
+                               HeightRequest="20"
+                               Margin="0,0,10,0"/>
+                        <Label x:Name="PhoneLabel" Grid.Row="0" Grid.Column="1" 
+                               TextColor="White"/>
+
+                        <Image Grid.Row="1" Grid.Column="0" 
+                               Source="monitor.png" 
+                               HeightRequest="20"
+                               Margin="0,10,10,0"/>
+                        <Label x:Name="WebsiteLabel"
+                               Grid.Row="1"
+                               Grid.Column="1"
+                               TextColor="White"
+                               TextDecorations="Underline"
+                               Margin="0,10,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnWebsiteTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+
+                    <!-- Кнопка закрытия -->
+                    <Button Text="✕" 
+                            Clicked="OnCloseButtonClicked"
+                            FontSize="20"
+                            CornerRadius="20"
+                            HorizontalOptions="Center"
+                            Margin="0,20,0,0"/>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
+    </Grid>
+</ContentPage>

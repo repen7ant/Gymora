@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gymora.Diet"
+             BackgroundColor="White">
+
+    <Shell.TitleView>
+        <Label Text="Калькулятор калорий" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="26"
+               TextColor="Black"
+               FontAttributes="Bold"/>
+    </Shell.TitleView>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="5" Spacing="5">
+            
+            <Frame BackgroundColor="Black"
+                   CornerRadius="30"
+                   Padding="20"
+                   HasShadow="True"
+                   HorizontalOptions="Center"
+                   WidthRequest="380">
+                
+                <VerticalStackLayout Spacing="15">
+                    
+                    <!-- Пол -->
+                    <Frame Padding="0" CornerRadius="20" BackgroundColor="White" HasShadow="False" BorderColor="Transparent">
+                    <Picker x:Name="GenderPicker"
+                            Title="Пол"
+                            TextColor="Black"
+                            HorizontalOptions="Center"
+                            BackgroundColor="Transparent"
+                            HeightRequest="40">
+                        <Picker.Items>
+                            <x:String>Мужчина</x:String>
+                            <x:String>Женщина</x:String>
+                        </Picker.Items>
+                        </Picker>
+                    </Frame>
+
+                <!-- Возраст, вес, рост -->
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <VerticalStackLayout>
+                        <Label Text="Возраст" TextColor="White" HorizontalOptions="Center"/>
+                        <Frame Padding="0" CornerRadius="20" BackgroundColor="White" HasShadow="False" WidthRequest="100">
+                                <Entry x:Name="AgeEntry" Placeholder="лет" Keyboard="Numeric" TextColor="Black" HorizontalOptions="Center"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                            <Label Text="Вес" TextColor="White" HorizontalOptions="Center"/>
+                        <Frame Padding="0" CornerRadius="20" BackgroundColor="White" HasShadow="False" WidthRequest="100">
+                                <Entry x:Name="WeightEntry" Placeholder="кг" Keyboard="Numeric" TextColor="Black" HorizontalOptions="Center"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                            <Label Text="Рост" TextColor="White" HorizontalOptions="Center"/>
+                        <Frame Padding="0" CornerRadius="20" BackgroundColor="White" HasShadow="False" WidthRequest="100">
+                                <Entry x:Name="HeightEntry" Placeholder="см" Keyboard="Numeric" TextColor="Black" HorizontalOptions="Center"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <!-- Активность -->
+                <Frame Padding="0" CornerRadius="20" BackgroundColor="White" HasShadow="False">
+                    <Picker x:Name="ActivityPicker"
+                            Title="Уровень активности"
+                            HorizontalOptions="Center"
+                            TextColor="Black"
+                            BackgroundColor="Transparent"
+                            HeightRequest="40">
+                            <Picker.Items>
+                                <x:String>Небольшие физические нагрузки</x:String>
+                                <x:String>Легкие физические нагрузки 1-3 дня в неделю</x:String>
+                                <x:String>Умеренные физические нагрузки 3-5 дней в неделю</x:String>
+                                <x:String>Интенсивные физические нагрузки 6-7 дней в неделю</x:String>
+                                <x:String>Очень тяжелая физическая нагрузка или работа</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+
+                <!-- Кнопка -->
+                <Button Text="Рассчитать"
+                        Clicked="OnCalculateClicked"
+                        BackgroundColor="#8e44ad"
+                        TextColor="White"
+                        CornerRadius="20"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HeightRequest="45"/>
+
+                <!-- Результаты -->
+                <Grid x:Name="ResultGrid"
+                      ColumnDefinitions="*, Auto"
+                      RowSpacing="10"
+                      ColumnSpacing="10"
+                      Padding="10"
+                      IsVisible="False" />
+                    
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

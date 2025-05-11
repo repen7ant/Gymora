@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Gymora.ViewModels"
+             xmlns:models="clr-namespace:Gymora.Models"
+             x:Class="Gymora.IntroScreenView"
+             Shell.NavBarIsVisible="False"
+             x:DataType="viewModels:IntroScreenViewModel"
+             Title="IntroScreenView">
+    <Grid Margin="10" RowDefinitions="*,Auto">
+        <CarouselView ItemsSource="{Binding IntroScreens}" 
+                      Position="{Binding Position}"
+                      Loop="False"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand"
+                      IndicatorView="indicatorView">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:IntroScreenModel">
+                    <ScrollView>
+                        <Grid RowDefinitions="40*,40*">
+                            <Image Source="{Binding IntroImage}" Aspect="AspectFill" Grid.Row="0"/>
+                            <VerticalStackLayout Grid.Row="1" >
+                                <Label Text="{Binding IntroTitle}" FontAttributes="Bold" FontSize="28"/>
+                                <Label Text="{Binding IntroDescription}" TextColor="Gray" FontSize="20"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </ScrollView>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <StackLayout  Orientation="Horizontal"  
+                      Grid.Row="1" >
+            <IndicatorView x:Name="indicatorView" 
+                           VerticalOptions="Center"
+                           IndicatorSize="10"
+                           IndicatorColor="LightGray"  
+                           SelectedIndicatorColor ="GreenYellow" />
+            <Frame 
+                HorizontalOptions="EndAndExpand"
+                Padding="0"
+                   CornerRadius="30"
+                    HeightRequest="60" 
+                   WidthRequest="60" 
+                   BackgroundColor="GreenYellow">
+                <Label Text="{Binding ButtonText}" TextColor="White" 
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NextCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+        </Grid>
+</ContentPage>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gymora.SignInSignUpView"
+             Title="Empty"
+             NavigationPage.HasNavigationBar="False">
+    <AbsoluteLayout>
+        <Image Source="ellipsegreen.png"
+               AbsoluteLayout.LayoutBounds="1.2, 0.0, 170, 170"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Image Source="ellipsepurple.png"
+                   AbsoluteLayout.LayoutBounds="-0.3, 0.05, 200, 200"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                   />
+        <Image Source="copybara.png"
+           AbsoluteLayout.LayoutBounds="0.5, 0.2,300, 260"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+           />
+        <Label Text="Достигай своих целей вместе с нами"
+           FontFamily="Montserrat"
+           AbsoluteLayout.LayoutBounds="110, 400, 200, 80"
+           WidthRequest="300"
+           AbsoluteLayout.LayoutFlags="None"
+           TextColor="Black"
+           FontSize="24"
+           FontAttributes="Bold,Italic"
+           HorizontalTextAlignment="Center"/>
+        <Label Text="Твой персональный гид по миру тренировок уже ждет!"
+           FontFamily="Montserrat"
+           AbsoluteLayout.LayoutBounds="110, 480, 200, 90"
+           WidthRequest="300"
+           AbsoluteLayout.LayoutFlags="None"
+           TextColor="Black"
+           FontSize="20"
+           
+           HorizontalTextAlignment="Center"/>
+        <Border 
+            WidthRequest="353" 
+            HeightRequest="56" 
+            Background="#D5FF40"
+            StrokeShape="RoundRectangle 80" 
+            HorizontalOptions="Center"
+            AbsoluteLayout.LayoutBounds="110, 612, 200, 90"/>
+        <Button
+                Command= "{Binding SignInCommand}" 
+            BackgroundColor="Transparent"
+                WidthRequest="353"
+                HeightRequest="70"
+                AbsoluteLayout.LayoutBounds="110, 612, 200, 90"
+                Text="Войти"
+                FontSize="20"
+                FontFamily="Montserrat"
+                TextColor="Black">
+            
+        </Button>
+        <Border 
+            WidthRequest="353" 
+            HeightRequest="56" 
+            Background="White"
+            Stroke="Black"
+            StrokeShape="RoundRectangle 80" 
+            HorizontalOptions="Center"
+            AbsoluteLayout.LayoutBounds="110, 686, 200, 90"/>
+
+            <Button
+                BackgroundColor="Transparent"
+            Text="Зарегистрироваться" 
+            Command= "{Binding SignUpCommand}" 
+            WidthRequest="353"
+            HeightRequest="70"
+            AbsoluteLayout.LayoutBounds="110, 686, 200, 90"
+            FontSize="20"
+            FontFamily="Montserrat"
+            TextColor="Black">
+        </Button>
+
+
+    </AbsoluteLayout>
+
+
+
+</ContentPage>
