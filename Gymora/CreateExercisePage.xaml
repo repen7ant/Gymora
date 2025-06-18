@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gymora.CreateExercisePage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" Margin="-15, 0">
+            <HorizontalStackLayout>
+                <Label Text="Упражнение" FontAttributes="Bold" FontSize="25"/>
+                <Button Text="✓" 
+                        BackgroundColor="#D5FF40"
+                        FontSize="25"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        Padding="0"
+                        Margin="180,0,0,0"
+                        CornerRadius="30"
+                        TextColor="Black"
+                        Clicked="OnSaveExerciseClicked"/>
+            </HorizontalStackLayout>
+            <Frame Padding="0" CornerRadius="20" BackgroundColor="LightGray" HasShadow="False">
+                <Entry Placeholder="Название" 
+                       PlaceholderColor="Black" 
+                       x:Name="ExerciseNameEntry"
+                       IsTextPredictionEnabled="True"
+                       Keyboard="Text"/>
+            </Frame>
+
+            <Label Text="Группа мышц" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Frame BackgroundColor="Black"
+                   CornerRadius="20"
+                   Padding="10"
+                   HasShadow="True"
+                   HorizontalOptions="FillAndExpand">
+                <Picker x:Name="MuscleGroupPicker" Title="Выберите группу мышц" TitleColor="LightGray" TextColor="White">
+                    <Picker.Items>
+                        <x:String>Бицепс</x:String>
+                        <x:String>Трицепс</x:String>
+                        <x:String>Плечи</x:String>
+                        <x:String>Спина</x:String>
+                        <x:String>Грудь</x:String>
+                        <x:String>Пресс</x:String>
+                        <x:String>Ягодицы</x:String>
+                        <x:String>Ноги</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <Label Text="Подходы" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+            <CollectionView x:Name="SetsCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="Black"
+                               CornerRadius="20"
+                               Padding="10"
+                               HasShadow="True"
+                               HorizontalOptions="FillAndExpand">
+                            <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+                                <Frame Padding="0"
+                                       CornerRadius="20"
+                                       HeightRequest="40"
+                                       WidthRequest="40"
+                                       BorderColor="Purple"
+                                       BackgroundColor="Transparent"
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+                                    <Label Text="{Binding SetNumber, StringFormat='{0}'}"
+                                           FontSize="16"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                </Frame>
+
+                                <!-- Ввод веса -->
+                                    <HorizontalStackLayout Spacing="4" VerticalOptions="Center">
+                                        <Label Text="Вес:" VerticalOptions="Center" TextColor="White"/>
+                                    <Frame Padding="0"
+                                           CornerRadius="20"
+                                           BackgroundColor="White"
+                                           HasShadow="False"
+                                           WidthRequest="75"
+                                           HeightRequest="40"
+                                           VerticalOptions="Center">
+                                        <Entry Placeholder="кг"
+                                               Keyboard="Numeric"
+                                               WidthRequest="40"
+                                               Text="{Binding Weight, StringFormat='{0:F1}'}"
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                </HorizontalStackLayout>
+
+                                <!-- Ввод количества -->
+                                    <HorizontalStackLayout Spacing="4" VerticalOptions="Center">
+                                        <Label Text="Кол-во:" VerticalOptions="Center" TextColor="White"/>
+                                    <Frame Padding="0"
+                                           CornerRadius="20"
+                                           BackgroundColor="White"
+                                           HasShadow="False"
+                                           WidthRequest="75"
+                                           HeightRequest="40"
+                                           VerticalOptions="Center">
+                                        <Entry Placeholder="раз"
+                                               Keyboard="Numeric"
+                                               WidthRequest="40"
+                                               Text="{Binding Reps}"
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+                                </HorizontalStackLayout>
+
+                                <!-- Кнопка удаления -->
+                                <Button Text="❌"
+                                        BackgroundColor="Transparent"
+                                        VerticalOptions="Center"
+                                        Clicked="OnDeleteSetClicked"
+                                        CommandParameter="{Binding .}"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="+" 
+                    TextColor="#D5FF40"
+                    FontSize="30"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    Padding="0"
+                    CornerRadius="30"
+                    BackgroundColor="Black"
+                    Clicked="OnAddSetClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

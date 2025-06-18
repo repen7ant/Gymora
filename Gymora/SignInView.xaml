@@ -5,29 +5,24 @@
              Title="Sign In">
     <AbsoluteLayout>
         <Image Source="ellipsegreen.png"
-           AbsoluteLayout.LayoutBounds="1.2, 0.0, 170, 170"
-           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+               AbsoluteLayout.LayoutBounds="1.2, 0.0, 170, 170"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
         <Image Source="ellipsepurple.png"
                AbsoluteLayout.LayoutBounds="-0.3, 0.05, 200, 200"
-                AbsoluteLayout.LayoutFlags="PositionProportional"
-               />
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
         <Image Source="copybara.png"
-       AbsoluteLayout.LayoutBounds="55, 100,300, 260"
-        
-            />
+               AbsoluteLayout.LayoutBounds="55, 100,300, 260"/>
         <Image Source="bigellipsepurple.png"
-       AbsoluteLayout.LayoutBounds="1.1 , 0.75, 200, 200"
-        AbsoluteLayout.LayoutFlags="PositionProportional"
-       />
+               AbsoluteLayout.LayoutBounds="1.1 , 0.75, 200, 200"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
         <Label Text="Вход в GYMora" 
-           AbsoluteLayout.LayoutBounds="0.6,340, 200, 90"
-           TextColor="Black"
-           FontSize="24"
-           FontFamily="Montserrat"
-           FontAttributes="Bold"
-           AbsoluteLayout.LayoutFlags="XProportional"
-           />
+               AbsoluteLayout.LayoutBounds="0.6,340, 200, 90"
+               TextColor="Black"
+               FontSize="24"
+               FontFamily="Montserrat"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutFlags="XProportional"/>
 
         <Border 
             WidthRequest="381" 
@@ -38,30 +33,29 @@
             AbsoluteLayout.LayoutBounds="0.5, 470, 200, 90"
             AbsoluteLayout.LayoutFlags="XProportional"/>
         <Label Text="Email" 
-           AbsoluteLayout.LayoutBounds="40,400 , 200, 90"
-           TextColor="White"
-           FontSize="20"
-           FontFamily="Montserrat"/>
+               AbsoluteLayout.LayoutBounds="40,400 , 200, 90"
+               TextColor="White"
+               FontSize="20"
+               FontFamily="Montserrat"/>
 
         <Entry Text="{Binding Email}"
                AbsoluteLayout.LayoutBounds="0.5, 420, 200, 80"
                BackgroundColor="White"
                WidthRequest="345"
                HeightRequest="43"
-               AbsoluteLayout.LayoutFlags="XProportional"
-               />
+               AbsoluteLayout.LayoutFlags="XProportional"/>
         <Label Text="Пароль" 
-           AbsoluteLayout.LayoutBounds="40,490 , 200, 90"
-           TextColor="White"
-           FontSize="20"
-           FontFamily="Montserrat"/>
+               AbsoluteLayout.LayoutBounds="40,490 , 200, 90"
+               TextColor="White"
+               FontSize="20"
+               FontFamily="Montserrat"/>
         <Entry Text="{Binding Password}" IsPassword="True"
                AbsoluteLayout.LayoutBounds="0.5, 510, 200, 80"
                BackgroundColor="White"
                WidthRequest="345"
                HeightRequest="43"
                AbsoluteLayout.LayoutFlags="XProportional"/>
-        <Button Text="Нет аккаунта?" Command="{Binding NavigateSignUpCommand}"
+        <Button Text="Забыли пароль?" Command="{Binding NewPasswordCommand}"
                 AbsoluteLayout.LayoutBounds="0.5, 565, 200, 80"
                 AbsoluteLayout.LayoutFlags="XProportional"
                 Background="Transparent"
@@ -76,7 +70,7 @@
     AbsoluteLayout.LayoutFlags="XProportional"/>
         <Button
         Command= "{Binding SignInCommand}" 
-    BackgroundColor="Transparent"
+        BackgroundColor="Transparent"
         WidthRequest="353"
         HeightRequest="70"
         AbsoluteLayout.LayoutBounds="0.5, 700, 200, 90"
@@ -85,7 +79,5 @@
         FontSize="20"
         FontFamily="Montserrat"
         TextColor="Black"/>
-
     </AbsoluteLayout>
-
 </ContentPage>  

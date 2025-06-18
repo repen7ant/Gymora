@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Gymora"
+             xmlns:converters="clr-namespace:Gymora.Converters"
+             x:Class="Gymora.WorkoutExecutionPage">
+    <ContentPage.Resources>
+        <converters:ExpandCollapseConverter x:Key="ExpandCollapseConverter"/>
+        <converters:CompleteConverter x:Key="CompleteConverter"/>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="{Binding Program.Name}" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+
+            <CollectionView ItemsSource="{Binding Exercises}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="10">
+                            <StackLayout Margin="0,20,0, 0" IsVisible="{Binding ShowExerciseRestTimer}">
+                                <Label Text="Отдых между упражнениями:" FontSize="14" FontAttributes="Bold"/>
+                                <ProgressBar Progress="{Binding ExerciseRestProgress}"/>
+                                <Label Text="{Binding ExerciseRestTimeText}" HorizontalOptions="Center"/>
+                            </StackLayout>
+
+                            <Frame BackgroundColor="Black"
+                               CornerRadius="20"
+                               Padding="10"
+                               HasShadow="True"
+                               HorizontalOptions="FillAndExpand">
+                                <VerticalStackLayout Spacing="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <VerticalStackLayout>
+                                            <Label Text="{Binding MuscleGroupDisplay}" TextColor="White" FontSize="14"/>
+                                            <Label Text="{Binding Name}" FontSize="16" TextColor="White"  FontAttributes="Bold"/>
+                                        </VerticalStackLayout>
+
+                                        <Button Text="{Binding IsExpanded, Converter={StaticResource ExpandCollapseConverter}}" 
+                                                Grid.Column="1"
+                                                BackgroundColor="#D5FF40"
+                                                FontSize="25"
+                                                WidthRequest="40"
+                                                HeightRequest="40"
+                                                Padding="0"
+                                                TextColor="Black"
+                                                CornerRadius="30"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:WorkoutExecutionPage}}, Path=ToggleExerciseCommand}"
+                                                CommandParameter="{Binding .}"/>
+                                    </Grid>
+
+                                    <StackLayout IsVisible="{Binding IsExpanded}" Spacing="10">
+                                        <CollectionView ItemsSource="{Binding Sets}">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame BackgroundColor="Transparent"
+                                                           BorderColor="Transparent"
+                                                           Padding="10"
+                                                           HorizontalOptions="FillAndExpand"
+                                                           Margin="0,4">
+                                                        <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+                                                            <Frame
+                                                                    Padding="0"
+                                                                    CornerRadius="20"
+                                                                    HeightRequest="40"
+                                                                    WidthRequest="40"
+                                                                    BorderColor="Purple"
+                                                                    BackgroundColor="Transparent"
+                                                                    VerticalOptions="Center">
+                                                                <Label
+                                                                    Text="{Binding SetNumber, StringFormat='{0}'}"
+                                                                    FontSize="16"
+                                                                    TextColor="White"
+                                                                    HorizontalOptions="Center"
+                                                                    VerticalOptions="Center"
+                                                                    HorizontalTextAlignment="Center"
+                                                                    VerticalTextAlignment="Center"/>
+                                                            </Frame>
+
+                                                            <Frame Padding="0"
+                                                                   CornerRadius="20"
+                                                                   BackgroundColor="White"                                                               
+                                                                   WidthRequest="100"
+                                                                   HeightRequest="40"
+                                                                   VerticalOptions="Center">
+                                                                <Label Text="{Binding Weight, StringFormat='{0:F1} кг'}"
+                                                                       HorizontalOptions="Center"
+                                                                       VerticalOptions="Center"
+                                                                       TextColor="Black"/>
+                                                            </Frame>
+
+                                                            <Frame Padding="0"
+                                                                   CornerRadius="20"
+                                                                   BackgroundColor="White"
+                                                                   WidthRequest="120"
+                                                                   HeightRequest="40"
+                                                                   VerticalOptions="Center">
+                                                                <Label Text="{Binding Reps, StringFormat='{0} раз'}"
+                                                                       HorizontalOptions="Center"
+                                                                       VerticalOptions="Center"
+                                                                       TextColor="Black"/>
+                                                            </Frame>
+
+                                                            <Button Text="{Binding IsCompleted, Converter={StaticResource CompleteConverter}}"
+                                                                    BackgroundColor="Transparent"
+                                                                    TextColor="White"
+                                                                    FontSize="20"
+                                                                    VerticalOptions="Center"
+                                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:WorkoutExecutionPage}}, Path=CompleteSetCommand}"
+                                                                    CommandParameter="{Binding .}"/>
+                                                        </HorizontalStackLayout>
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+
+                                        <StackLayout IsVisible="{Binding IsResting}" Spacing="5">
+                                            <Label Text="Отдых:" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+                                            <Grid VerticalOptions="Center" HeightRequest="20">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ProgressBar Grid.Column="0" 
+                                                             Progress="{Binding RestProgress}"
+                                                             HeightRequest="40" 
+                                                             VerticalOptions="Center"/>
+                                                <Label Grid.Column="1" 
+                                                        Text="{Binding RestTimeText}" 
+                                                        TextColor="White"
+                                                        VerticalOptions="Center"
+                                                        Margin="10,0,0,0"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Закончить тренировку" 
+                    Command="{Binding FinishWorkoutCommand}"
+                    Margin="0,20,0,0"
+                    FontSize="16"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

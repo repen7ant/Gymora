@@ -24,7 +24,7 @@
 		<ApplicationTitle>Gymora</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.gymora</ApplicationId>
+		<ApplicationId>com.copybarabusiness.gymora</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -64,8 +64,26 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="FiltersPage.xaml.cs">
+	    <DependentUpon>FiltersPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CreateProgramPage.xaml.cs">
+	    <DependentUpon>CreateProgramPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="WorkoutExecutionPage.xaml.cs">
+	    <DependentUpon>WorkoutExecutionPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="AppShell.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="CreateExercisePage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="CustomControls\CalendarView.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -81,17 +99,17 @@
 		<MauiXaml Update="Gyms.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="FiltersPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="CreateProgramPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="IntroScreenView.xaml">
-			<Generator>MSBuild:Compile</Generator>
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="ProfilePage.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="Resources\Styles\Colors.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="Resources\Styles\Styles.xaml">
-			<Generator>MSBuild:Compile</Generator>
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="SignInSignUpView.xaml">
 		  <Generator>MSBuild:Compile</Generator>
@@ -99,15 +117,21 @@
 		<MauiXaml Update="SignInView.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="SignUpView2.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="WorkoutExecutionPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Resources\Styles\Colors.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Resources\Styles\Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="SignUpView.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\gyms.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>

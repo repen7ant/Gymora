@@ -33,7 +33,7 @@ namespace Gymora.ViewModels
             try
             {
                 await _authClient.CreateUserWithEmailAndPasswordAsync(Email, Password, Username);
-                await Shell.Current.GoToAsync("//SignIn");
+                await Shell.Current.GoToAsync("//SignUp2");
             }
 
             catch (FirebaseAuthException ex)
@@ -54,7 +54,7 @@ namespace Gymora.ViewModels
         [RelayCommand]
         private async Task NavigateSignIn()
         {
-            await Shell.Current.GoToAsync("//SignIn");
+            await Shell.Current.GoToAsync("//SignUp2");
         }
     }
 }

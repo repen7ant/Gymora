@@ -5,15 +5,38 @@
              x:Class="Gymora.Gyms">
 
     <Shell.TitleView>
-        <Label Text="Залы" 
-               HorizontalOptions="Start"
+        <HorizontalStackLayout>
+            <Label Text="Залы" 
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   FontSize="26"
+                   FontAttributes="Bold"/>
+
+            <AbsoluteLayout HorizontalOptions="End" 
                VerticalOptions="Center"
-               FontSize="26"
-               FontAttributes="Bold"/>
+               WidthRequest="50"
+               HeightRequest="50"
+               Margin="250,0,0,0">
+                <BoxView Color="#D5FF40" 
+                 CornerRadius="25" 
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 BackgroundColor="Transparent"
+                 AbsoluteLayout.LayoutBounds="0,0,50,50"
+                 AbsoluteLayout.LayoutFlags="None"/>
+                <ImageButton Source="Resources/Images/filter.png"
+                 WidthRequest="30"
+                 HeightRequest="30"
+                 AbsoluteLayout.LayoutBounds="10,10,30,30"
+                 AbsoluteLayout.LayoutFlags="None"
+                 Clicked="OnFilterButtonClicked"/>
+            </AbsoluteLayout>
+        </HorizontalStackLayout>
     </Shell.TitleView>
 
-    <maps:Map x:Name="GymMap"
-              IsShowingUser="true"
-              MapType="Street"
-              HeightRequest="1000"/>
+    <Grid>
+        <maps:Map x:Name="GymMap"
+                  IsShowingUser="true"
+                  MapType="Street"/>
+    </Grid>
 </ContentPage>

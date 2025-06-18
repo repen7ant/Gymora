@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gymora.CreateProgramPage">
+    
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Создание программы" FontAttributes="Bold" FontSize="25"/>
+            <Frame Padding="0" CornerRadius="20" BackgroundColor="LightGray" HasShadow="False">
+                <Entry Placeholder="Название" x:Name="ProgramNameEntry" PlaceholderColor="Black" IsTextPredictionEnabled="True" Keyboard="Text"/>
+            </Frame>
+
+            <Label Text="Отдых" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Frame BackgroundColor="Black"
+                   CornerRadius="20"
+                   Padding="10"
+                   HasShadow="True"
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="400">
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Между подходами"
+                               VerticalOptions="Center"
+                               TextColor="White"
+                               Grid.Column="0"/>
+                        <Frame Padding="0"
+                               CornerRadius="20"
+                               BackgroundColor="White"
+                               HasShadow="False"
+                               WidthRequest="100"
+                               Grid.Column="1">
+                            <Entry Placeholder="сек"
+                                   Keyboard="Numeric"
+                                   WidthRequest="60"
+                                   HorizontalTextAlignment="Center"
+                                   x:Name="RestBetweenSetsEntry"/>
+                        </Frame>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Между упражнениями"
+                               VerticalOptions="Center"
+                               TextColor="White"
+                               Grid.Column="0"/>
+                        <Frame Padding="0"
+                               CornerRadius="20"
+                               BackgroundColor="White"
+                               HasShadow="False"
+                               WidthRequest="100"
+                               Grid.Column="1">
+                            <Entry Placeholder="сек"
+                                   Keyboard="Numeric"
+                                   WidthRequest="60"
+                                   HorizontalTextAlignment="Center"
+                                   x:Name="RestBetweenExercisesEntry"/>
+                        </Frame>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <BoxView HeightRequest="1"
+                     BackgroundColor="Gray"
+                     HorizontalOptions="FillAndExpand"/>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Упражнения" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Button Text="+" 
+                        TextColor="#D5FF40"
+                        FontSize="30"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        Padding="0"
+                        CornerRadius="30"
+                        BackgroundColor="Black"
+                        Clicked="OnAddExerciseClicked"/>
+            </VerticalStackLayout>
+
+            <CollectionView x:Name="ExercisesCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="Black"
+                               CornerRadius="20"
+                               Padding="10"
+                               HasShadow="True"
+                               HorizontalOptions="FillAndExpand">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" TextColor="White" FontSize="16"/>
+                                    <Label Text="{Binding MuscleGroupDisplay}" TextColor="White" FontSize="14"/>
+                                </VerticalStackLayout>
+
+                                <HorizontalStackLayout Grid.Column="1" Spacing="5">
+                                    <Frame WidthRequest="50"
+                                           HeightRequest="50"
+                                           CornerRadius="30"
+                                           Padding="0"
+                                           BackgroundColor="#D5FF40"
+                                           BorderColor="Transparent">
+                                        <ImageButton Source="edit.png"                           
+                                                     BackgroundColor="Transparent"
+                                                     Clicked="OnEditExerciseClicked"
+                                                     CommandParameter="{Binding .}"
+                                                     WidthRequest="24" HeightRequest="24"/>
+                                    </Frame>
+                                    <Frame WidthRequest="50"
+                                           HeightRequest="50"
+                                           CornerRadius="30"
+                                           Padding="0"
+                                           BackgroundColor="#D5FF40"
+                                           BorderColor="Transparent">
+                                        <ImageButton Source="delete.png"                           
+                                                     BackgroundColor="Transparent"
+                                                     Clicked="OnDeleteExerciseClicked"
+                                                     CommandParameter="{Binding .}"
+                                                     WidthRequest="24" HeightRequest="24"/>
+                                    </Frame>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Сохранить" 
+                    TextColor="Black"
+                    CornerRadius="30"
+                    WidthRequest="150"
+                    BackgroundColor="#D5FF40"
+                    Clicked="OnSaveProgramClicked"
+                    Margin="0,60,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

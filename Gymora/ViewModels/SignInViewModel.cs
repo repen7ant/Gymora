@@ -48,10 +48,55 @@ using System.Threading.Tasks;
                 }
             }
 
-            [RelayCommand]
-            private async Task NavigateSignUp()
+        [RelayCommand]
+        private async Task NewPassword()
+        {
+            try
             {
-                await Shell.Current.GoToAsync("//SignUp");
+                // Проверяем, авторизован ли пользователь
+                if (_authClient.User == null)
+                {
+                    await Shell.Current.DisplayAlert("Ошибка", "Вы не авторизованы", "OK");
+                    return;
+                }
+
+                // Запрашиваем email пользователя для отправки ссылки сброса
+                string email = await Shell.Current.DisplayPromptAsync(
+                    "Восстановление пароля",
+                    "Введите ваш email для отправки инструкций:",
+                    "Отправить",
+                    "Отмена",
+                    "example@mail.com",
+                    -1,
+                    Keyboard.Email);
+
+                if (string.IsNullOrWhiteSpace(email))
+                    return;
+
+                // Отправляем письмо для сброса пароля
+                await _authClient.ResetEmailPasswordAsync(email);
+
+                await Shell.Current.DisplayAlert(
+                    "Успешно",
+                    "Письмо с инструкциями по смене пароля отправлено на вашу почту",
+                    "OK");
+            }
+            catch (FirebaseAuthException ex)
+            {
+                string errorMessage = ex.Reason switch
+                {
+                    AuthErrorReason.InvalidEmailAddress => "Неверный формат email",
+                    AuthErrorReason.UserNotFound => "Пользователь с таким email не найден",
+                    AuthErrorReason.TooManyAttemptsTryLater => "Слишком много попыток. Попробуйте позже",
+                    _ => $"Ошибка: {ex.Message}"
+                };
+
+                await Shell.Current.DisplayAlert("Ошибка", errorMessage, "OK");
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Ошибка", $"Не удалось отправить запрос: {ex.Message}", "OK");
             }
         }
     }
+}

@@ -101,7 +101,7 @@ public partial class Diet : ContentPage
         {
             ResultGrid.IsVisible = true;
             ResultGrid.Children.Clear();
-            ResultGrid.RowDefinitions.Clear(); // <-- Очистим старые строки
+            ResultGrid.RowDefinitions.Clear();
 
             ResultGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 

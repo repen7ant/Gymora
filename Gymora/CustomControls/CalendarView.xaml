@@ -27,7 +27,6 @@
             </Image>
         </HorizontalStackLayout>
     </Grid>
-   
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=Dates}">
         <CollectionView.ItemsLayout>
@@ -35,29 +34,37 @@
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:CalendarModel">
-                <Border StrokeShape="RoundRectangle 20" WidthRequest="60" Padding="10">
-                    <VerticalStackLayout>
-                        <Label Text="{Binding Date, StringFormat='{0:ddd}'}" FontSize="18"
-                               TextColor="White"
-                               HorizontalTextAlignment="Center"/>
-                        <Label Text="{Binding Date, StringFormat='{0:d }'}" FontSize="24" 
-                               FontAttributes="Bold"
-                               TextColor="White"
-                               HorizontalTextAlignment="Center"/>
-                    </VerticalStackLayout>
-                    
-                    <Border.Triggers>
-                        <DataTrigger TargetType="Border" Binding="{Binding IsCurrentDate}" Value="True">
-                            <Setter Property="BackgroundColor" Value="#512BD4"/>
-                        </DataTrigger>
-                        <DataTrigger TargetType="Border" Binding="{Binding IsCurrentDate}" Value="False">
-                            <Setter Property="BackgroundColor" Value="Black"/>
-                        </DataTrigger>  
-                    </Border.Triggers>
-                    <Border.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=CurrentDateCommand}" CommandParameter="{Binding .}"/>
-                    </Border.GestureRecognizers>
-                </Border>
+                <VerticalStackLayout Spacing="5">
+                    <!-- Дата в рамке -->
+                    <Border StrokeShape="RoundRectangle 20" WidthRequest="60" Padding="10">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Date, StringFormat='{0:ddd}'}" FontSize="18"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding Date, StringFormat='{0:d }'}" FontSize="24" 
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+
+                        <Border.Triggers>
+                            <DataTrigger TargetType="Border" Binding="{Binding IsCurrentDate}" Value="True">
+                                <Setter Property="BackgroundColor" Value="#512BD4"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Border" Binding="{Binding IsCurrentDate}" Value="False">
+                                <Setter Property="BackgroundColor" Value="Black"/>
+                            </DataTrigger>
+                        </Border.Triggers>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=CurrentDateCommand}" CommandParameter="{Binding .}"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+
+                    <!-- Чекбокс под рамкой -->
+                    <CheckBox HorizontalOptions="Center" 
+                               Color="#512BD4"
+                               IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                </VerticalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

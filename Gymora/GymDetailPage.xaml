@@ -53,7 +53,7 @@
                     <VerticalStackLayout x:Name="PricesContainer" Spacing="5"/>
 
                     <!-- График работы -->
-                    <Frame BackgroundColor="GreenYellow" 
+                    <Frame BackgroundColor="#D5FF40" 
                            Padding="10"
                            HorizontalOptions="Center">
                         <VerticalStackLayout x:Name="HoursContainer" Spacing="5"/>

@@ -1,5 +1,6 @@
 using Gymora.Models;
 using System.Collections.ObjectModel;
+using System.Text.Json;
 using System.Windows.Input;
 
 namespace Gymora.CustomControls;
@@ -63,36 +64,51 @@ public partial class CalendarView : StackLayout
 		InitializeComponent();
 		BindDates(DateTime.Now); 
 	}
-
-	private void BindDates(DateTime date)
+    private Dictionary<DateTime, bool> _checkedDates = new Dictionary<DateTime, bool>();
+    private void BindDates(DateTime date)
 	{
-		Dates.Clear();
-		int daysCount = DateTime.DaysInMonth(date.Year, date.Month);
-		for (int days = 1; days <= daysCount; days++)
-		{
-			Dates.Add(new CalendarModel 
-			{ 
-				Date = new DateTime(date.Year, date.Month, days) 
-			});
-		}
-		var selectedDate = Dates.Where(d => d.Date.Date == SelectedDate.Date).FirstOrDefault();
-		if(selectedDate != null)
-		{
-			selectedDate.IsCurrentDate = true;
-			_tempDate = selectedDate.Date;
-		}
-	}
+        foreach (var dateModel in Dates)
+        {
+            _checkedDates[dateModel.Date] = dateModel.IsChecked;
+        }
+        Dates.Clear();
+        int daysCount = DateTime.DaysInMonth(date.Year, date.Month);
+        for (int days = 1; days <= daysCount; days++)
+        {
+            var currentDate = new DateTime(date.Year, date.Month, days);
+            Dates.Add(new CalendarModel
+            {
+                Date = currentDate,
+                IsChecked = _checkedDates.TryGetValue(currentDate, out var isChecked) && isChecked, Parent = this
+            });
+        }
 
-	#region Commands
-	public ICommand CurrentDateCommand => new Command<CalendarModel>((currentDate) =>
-	{
-		_tempDate = currentDate.Date;
-		SelectedDate = currentDate.Date;
-		OnDateSelected?.Invoke(null, currentDate.Date);
-		SelectedDateCommand?.Execute(currentDate.Date);
-	});
+        var selectedDate = Dates.FirstOrDefault(d => d.Date.Date == SelectedDate.Date);
+        if (selectedDate != null)
+        {
+            selectedDate.IsCurrentDate = true;
+            _tempDate = selectedDate.Date;
+        }
+    }
 
-	public ICommand NextMonthCommand => new Command((nextMonth) =>
+    #region Commands
+    public ICommand CurrentDateCommand => new Command<CalendarModel>((currentDate) =>
+    {
+        _tempDate = currentDate.Date;
+        SelectedDate = currentDate.Date;
+        OnDateSelected?.Invoke(null, currentDate.Date);
+        SelectedDateCommand?.Execute(currentDate.Date);
+        SaveCheckedDates();
+    });
+
+    public void SaveCheckedDates()
+    {
+        var checkedDates = Dates.Where(d => d.IsChecked).Select(d => d.Date).ToList();
+        var json = JsonSerializer.Serialize(checkedDates);
+        Preferences.Set("checked_dates", json);
+    }
+
+    public ICommand NextMonthCommand => new Command((nextMonth) =>
 	{
 		_tempDate = _tempDate.AddMonths(1);
 		BindDates(_tempDate);

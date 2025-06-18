@@ -3,16 +3,135 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gymora.Friends">
     <Shell.TitleView>
-        <Label Text="Мои друзья" 
-               HorizontalOptions="Start"
-               VerticalOptions="Center"
-               FontSize="26"
-               FontAttributes="Bold"/>
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="Мои друзья" 
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   FontSize="26"
+                   FontAttributes="Bold"/>
+
+            <Button Text="+" 
+                    BackgroundColor="#D5FF40"
+                    TextColor="Black"
+                    WidthRequest="40" 
+                    HeightRequest="40"
+                    FontSize="20"
+                    Padding="0"
+                    Margin="180,0,0,0"
+                    FontAttributes="Bold"
+                    CornerRadius="20"/>
+        </HorizontalStackLayout>
     </Shell.TitleView>
-    <VerticalStackLayout>
-        <Label 
-            Text="To be made..."
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="0">
+                <CollectionView x:Name="FriendsCollectionView"
+                               SelectionMode="Single"
+                               SelectionChanged="OnFriendSelected">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="15,10"
+                                  ColumnDefinitions="Auto,*,Auto">
+                                <Frame WidthRequest="60"
+                                       HeightRequest="60"
+                                       CornerRadius="30"
+                                       Padding="0"
+                                       IsClippedToBounds="True"
+                                       HasShadow="False"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start">
+                                    <Image Source="{Binding Picture}"
+                                           Aspect="AspectFill"
+                                           WidthRequest="60"
+                                           HeightRequest="60"/>
+                                </Frame>
+
+                                <Label Text="{Binding Username}"
+                                       FontSize="18"
+                                       VerticalOptions="Center"
+                                       Grid.Column="1"
+                                       Margin="10,0,0,0"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Border x:Name="ProfileModal"
+                IsVisible="False"
+                BackgroundColor="#80000000"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Padding="0">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnModalBackgroundTapped"/>
+            </Border.GestureRecognizers>
+
+            <Frame WidthRequest="320"
+                   HeightRequest="600"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Padding="0"
+                   CornerRadius="20"
+                   HasShadow="True">
+                <ScrollView>
+                    <VerticalStackLayout Padding="20" Spacing="20">
+                        <Grid ColumnDefinitions="*,Auto,*" VerticalOptions="Start">
+                            <Image x:Name="ModalProfileImage" 
+                                   Source="profile.png" 
+                                   WidthRequest="100" 
+                                   HeightRequest="100"
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" 
+                                   Grid.Column="1"/>
+                        </Grid>
+
+                        <Label x:Name="ModalUsernameLabel" 
+                               Text="@Имя_пользователя"
+                               FontSize="24"
+                               HorizontalOptions="Center"/>
+
+                        <Border StrokeShape="RoundRectangle 10" Background="#CCFF00" HorizontalOptions="Center">
+                            <Label Text="в сети" TextColor="Black" Padding="5" FontAttributes="Bold"/>
+                        </Border>
+
+                        <Grid ColumnDefinitions="*,*">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label x:Name="ModalWorkoutsCountLabel" Text="0" FontSize="24" HorizontalOptions="Center"/>
+                                <Label Text="тренировок" FontSize="14" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label x:Name="ModalFriendsCountLabel" Text="10" FontSize="24" HorizontalOptions="Center"/>
+                                <Label Text="друзей" FontSize="14" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Border Stroke="Black" BackgroundColor="Black" StrokeShape="RoundRectangle 20" Padding="15">
+                            <VerticalStackLayout Spacing="10">
+                                <Label Text="Зал" TextColor="Gray"/>
+                                <Label x:Name="ModalGymLabel" Text="Bright Fit" TextColor="White"/>
+
+                                <Label Text="Дата рождения" TextColor="Gray"/>
+                                <Label x:Name="ModalBirthdateLabel" Text="5 февраля 2006 (19 лет)" TextColor="White"/>
+
+                                <Label Text="Цель" TextColor="Gray"/>
+                                <Label x:Name="ModalGoalLabel" Text="Похудеть к лету :)" TextColor="White"/>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Button Text="Закрыть"
+                                Clicked="OnCloseModalClicked"
+                                BackgroundColor="#D5FF40"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                CornerRadius="10"/>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Frame>
+        </Border>
+    </Grid>
 </ContentPage>

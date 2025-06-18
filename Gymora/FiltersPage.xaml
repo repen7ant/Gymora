@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gymora.FiltersPage"
+             Title="Фильтры">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <!-- Фильтр по цене -->
+            <Label Text="Цена" FontSize="18" FontAttributes="Bold"/>
+            <Frame BackgroundColor="Black"
+                   CornerRadius="30"
+                   Padding="15"
+                   HasShadow="True"
+                   HorizontalOptions="Center"
+                   WidthRequest="400">
+                <VerticalStackLayout Spacing="5">
+                    <Grid ColumnDefinitions="Auto,*,*,*,*" ColumnSpacing="5">
+                        <Label Text="на" 
+                               TextColor="White" 
+                               FontSize="15"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"/>
+                        <Button x:Name="SingleBtn" Text="1 раз" TextColor="Black"
+                                Clicked="OnPeriodButtonClicked" 
+                                CornerRadius="10" BackgroundColor="#D5FF40"
+                                Grid.Column="1"/>
+                        <Button x:Name="MonthBtn" Text="месяц" TextColor="Black"
+                                Clicked="OnPeriodButtonClicked" 
+                                Grid.Column="2" CornerRadius="10" BackgroundColor="White"/>
+                        <Button x:Name="HalfYearBtn" Text="полгода" TextColor="Black"
+                                Clicked="OnPeriodButtonClicked" 
+                                Grid.Column="3" CornerRadius="10" BackgroundColor="White"/>
+                        <Button x:Name="YearBtn" Text="год" TextColor="Black"
+                                Clicked="OnPeriodButtonClicked" 
+                                Grid.Column="4" CornerRadius="10" BackgroundColor="White"/>
+                    </Grid>
+
+                    <!-- Поля для ввода диапазона -->
+                    <Grid ColumnDefinitions="Auto,*,Auto,*" ColumnSpacing="5" Margin="0,10,0,0">
+                        <Label Text="от" 
+                               TextColor="White" 
+                               FontSize="15"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"/>
+
+                        <Frame Padding="0" 
+                               CornerRadius="10" 
+                               BackgroundColor="White" 
+                               HasShadow="False" 
+                               Grid.Column="1">
+                            <Entry x:Name="MinPriceEntry" 
+                               Keyboard="Numeric" 
+                               BackgroundColor="Transparent"
+                               TextColor="Black"
+                               HorizontalOptions="FillAndExpand"/>
+                        </Frame>
+
+                        <Label Text="до" 
+                               TextColor="White" 
+                               FontSize="15"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               Grid.Column="2"/>
+                        <Frame Padding="0" 
+                               CornerRadius="10" 
+                               BackgroundColor="White" 
+                               HasShadow="False" 
+                               Grid.Column="3">
+                            <Entry x:Name="MaxPriceEntry" 
+                               Keyboard="Numeric" 
+                               BackgroundColor="Transparent"
+                               TextColor="Black"
+                               HorizontalOptions="FillAndExpand"/>
+                        </Frame>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Фильтр по району -->
+            <Label Text="Район" FontSize="18" FontAttributes="Bold"/>
+            <Frame BackgroundColor="Black"
+                   CornerRadius="30"
+                   Padding="20"
+                   HasShadow="True"
+                   HorizontalOptions="Center"
+                   WidthRequest="400">
+                <VerticalStackLayout Spacing="5">
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="AcademicDistrict" Color="#D5FF40"/>
+                        <Label Text="Академический" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="UpperIsetskyDistrict" Color="#D5FF40"/>
+                        <Label Text="Верх-Исетский" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="RailwayDistrict" Color="#D5FF40"/>
+                        <Label Text="Железнодорожный" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="KirovskyDistrict" Color="#D5FF40"/>
+                        <Label Text="Кировский" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="LeninskyDistrict" Color="#D5FF40"/>
+                        <Label Text="Ленинский" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="OktyabrskyDistrict" Color="#D5FF40"/>
+                        <Label Text="Октябрьский" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="OrdzhonikidzevskyDistrict" Color="#D5FF40"/>
+                        <Label Text="Орджоникидзевский" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="ChkalovskyDistrict" Color="#D5FF40"/>
+                        <Label Text="Чкаловский" TextColor="White" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Фильтр по рейтингу -->
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="С рейтингом от 4.6" FontSize="18" VerticalOptions="Center"/>
+                    <Switch x:Name="HighRatingSwitch" HorizontalOptions="End" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <!-- Кнопка применить -->
+            <Button Text="Применить" 
+                    BackgroundColor="#D5FF40" 
+                    TextColor="Black" 
+                    CornerRadius="20"
+                    WidthRequest="200"
+                    Clicked="OnApplyFiltersClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -11,8 +11,91 @@
                FontAttributes="Bold"/>
     </Shell.TitleView>
 
-    <VerticalStackLayout Padding="20" Spacing="25">
-
+    <VerticalStackLayout Padding="5" Spacing="10">
         <CustomControls:CalendarView x:Name="calendar" OnDateSelected="calendar_OnDateSelected"/>
+        
+        <BoxView HeightRequest="1"
+         BackgroundColor="Gray"
+         HorizontalOptions="FillAndExpand"/>
+        
+        <HorizontalStackLayout>
+            <Label Text="Мои программы:" 
+                   VerticalOptions="Center"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+
+            <Button Text="+" 
+                    TextColor="#D5FF40"
+                    FontSize="30"
+                    Margin="200,0,0,0"
+                    Padding="0"
+                    CornerRadius="30"
+                    BackgroundColor="Black"
+                    Clicked="OnAddProgramClicked"/>
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="ProgramsCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="Black"
+                   CornerRadius="30"
+                   Padding="10"
+                   HasShadow="True"
+                   HorizontalOptions="FillAndExpand"
+                   WidthRequest="400">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Name}" TextColor="White"  FontSize="16" VerticalOptions="Center"/>
+
+                            <HorizontalStackLayout Grid.Column="1" Spacing="5">
+                                <Frame
+                                    WidthRequest="50"
+                                    HeightRequest="50"
+                                    CornerRadius="30"
+                                    Padding="0"
+                                    BackgroundColor="#D5FF40"
+                                    BorderColor="Transparent">
+                                <ImageButton Source="play.png"                           
+                                             BackgroundColor="Transparent"
+                                             Clicked="OnStartProgramClicked"
+                                             CommandParameter="{Binding .}"
+                                             WidthRequest="24" HeightRequest="24"/>
+                                </Frame>
+                                <Frame
+                                    WidthRequest="50"
+                                    HeightRequest="50"
+                                    CornerRadius="30"
+                                    Padding="0"
+                                    BackgroundColor="#D5FF40"
+                                    BorderColor="Transparent">
+                                    <ImageButton Source="edit.png"
+                                             BackgroundColor="Transparent"
+                                             Clicked="OnEditProgramClicked"
+                                             CommandParameter="{Binding .}"
+                                             WidthRequest="24" HeightRequest="24"/>
+                                </Frame>
+                                <Frame
+                                    WidthRequest="50"
+                                    HeightRequest="50"
+                                    CornerRadius="30"
+                                    Padding="0"
+                                    BackgroundColor="#D5FF40"
+                                    BorderColor="Transparent">
+                                        <ImageButton Source="delete.png"
+                                             BackgroundColor="Transparent"
+                                             Clicked="OnDeleteProgramClicked"
+                                             CommandParameter="{Binding .}"
+                                             WidthRequest="24" HeightRequest="24"/>
+                                </Frame>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

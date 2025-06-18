@@ -17,17 +17,14 @@ public partial class GymDetailPage : ContentPage
 
     private void LoadGymData()
     {
-        // Основная информация
         NameLabel.Text = _gym.Name;
         AddressLabel.Text = _gym.Location;
-        RatingLabel.Text = _gym.Rating;
+        RatingLabel.Text = _gym.Rating.ToString("0.0");
         PhoneLabel.Text = _gym.Number;
         WebsiteLabel.Text = _gym.Website;
 
-        // Карусель изображений
         ImagesCarousel.ItemsSource = _gym.Images ?? new List<string>();
 
-        // Цены
         PricesContainer.Children.Clear();
 
         if (_gym.Prices != null && _gym.Prices.Count > 0)
@@ -48,7 +45,7 @@ public partial class GymDetailPage : ContentPage
                 {
                     var formatted = new FormattedString();
                     formatted.Spans.Add(new Span { Text = $"{price.Key} — ", TextColor = Colors.White });
-                    formatted.Spans.Add(new Span { Text = $"{price.Value}", TextColor = Colors.GreenYellow });
+                    formatted.Spans.Add(new Span { Text = $"{price.Value}", TextColor = Color.FromArgb("#D5FF40") });
                     formatted.Spans.Add(new Span { Text = " руб", TextColor = Colors.White });
 
                     PricesContainer.Children.Add(new Label
@@ -58,7 +55,6 @@ public partial class GymDetailPage : ContentPage
                     });
                 }
 
-                // Добавляем разделитель только если это не последний элемент
                 if (i < _gym.Prices.Count - 1)
                 {
                     PricesContainer.Children.Add(new BoxView
@@ -71,8 +67,6 @@ public partial class GymDetailPage : ContentPage
             }
         }
 
-
-        // График работы
         if (_gym.WorkingHours != null)
         {
             foreach (var hours in _gym.WorkingHours)

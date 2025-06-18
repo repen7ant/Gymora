@@ -21,9 +21,10 @@
             </Grid>
 
             <!-- Никнейм -->
-            <Label Text="@Имя_пользователя"
-                   FontSize="24"
-                   HorizontalOptions="Center"/>
+            <Label x:Name="UsernameLabel" 
+               Text="@Имя_пользователя"
+               FontSize="24"
+               HorizontalOptions="Center"/>
 
             <!-- Статус -->
             <Border StrokeShape="RoundRectangle 10" Background="#CCFF00" HorizontalOptions="Center">
@@ -32,14 +33,13 @@
 
             <!-- Статистика -->
             <Grid ColumnDefinitions="*,*">
-
                 <VerticalStackLayout Grid.Column="0">
-                    <Label Text="12" FontSize="24" HorizontalOptions="Center"/>
+                    <Label x:Name="WorkoutsCountLabel" Text="0" FontSize="24" HorizontalOptions="Center"/>
                     <Label Text="тренировок" FontSize="14" HorizontalOptions="Center"/>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Grid.Column="1">
-                    <Label Text="27" FontSize="24" HorizontalOptions="Center"/>
+                    <Label Text="10" FontSize="24" HorizontalOptions="Center"/>
                     <Label Text="друзей" FontSize="14" HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </Grid>
@@ -48,46 +48,23 @@
             <Border Stroke="Black" BackgroundColor="Black" StrokeShape="RoundRectangle 20" Padding="15">
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Зал" TextColor="Gray"/>
-                    <Label Text="Bright Fit" TextColor="White"/>
+                    <Label x:Name="GymLabel" Text="Bright Fit" TextColor="White"/>
 
-                    <Label Text="Дата рождения" TextColor="Gray"/>
-                    <Label Text="5 февраля 2006 (19 лет)" TextColor="White"/>
+                    <Label   Text="Дата рождения" TextColor="Gray"/>
+                    <Label x:Name="BirthdateLabel" Text="5 февраля 2006 (19 лет)" TextColor="White"/>
 
-                    <Label Text="Цель" TextColor="Gray"/>
-                    <Label Text="Похудеть к лету :)" TextColor="White"/>
+                    <Label  Text="Цель" TextColor="Gray"/>
+                    <Label x:Name="GoalLabel" Text="Похудеть к лету :)" TextColor="White"/>
 
-                    <Label Text="Район" TextColor="Gray"/>
-                    <Label Text="Уралмаш" TextColor="White"/>
                 </VerticalStackLayout>
             </Border>
 
             <!-- Тренировочные дни -->
             <Label Text="Тренировочные дни" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16"/>
 
-            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                <Border Background="#CCFF00" StrokeShape="Ellipse" Padding="10">
-                    <Label Text="пн" TextColor="Black"/>
-                </Border>
-                <Border Background="Black" Stroke="White" StrokeShape="Ellipse" Padding="10">
-                    <Label Text="вт" TextColor="White"/>
-                </Border>
-                <Border Background="#CCFF00" StrokeShape="Ellipse" Padding="10">
-                    <Label Text="ср" TextColor="Black"/>
-                </Border>
-                <Border Background="Black" Stroke="White" StrokeShape="Ellipse" Padding="10">
-                    <Label Text="чт" TextColor="White"/>
-                </Border>
-                <Border Background="#CCFF00" StrokeShape="Ellipse" Padding="10">
-                    <Label Text="пт" TextColor="Black"/>
-                </Border>
-                <Border Background="Black" Stroke="White" StrokeShape="Ellipse" Padding="10">
-                    <Label Text="сб" TextColor="White"/>
-                </Border>
-                <Border Background="Black" Stroke="White" StrokeShape="Ellipse" Padding="10">
-                    <Label Text="вс" TextColor="White"/>
-                </Border>
-            </HorizontalStackLayout>
-
+            <HorizontalStackLayout x:Name="TrainingDaysLayout"
+                        HorizontalOptions="Center"
+                        Spacing="10" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

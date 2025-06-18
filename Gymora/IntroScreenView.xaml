@@ -7,50 +7,87 @@
              Shell.NavBarIsVisible="False"
              x:DataType="viewModels:IntroScreenViewModel"
              Title="IntroScreenView">
-    <Grid Margin="10" RowDefinitions="*,Auto">
-        <CarouselView ItemsSource="{Binding IntroScreens}" 
-                      Position="{Binding Position}"
-                      Loop="False"
-                      VerticalOptions="FillAndExpand"
-                      HorizontalOptions="FillAndExpand"
-                      IndicatorView="indicatorView">
-            <CarouselView.ItemTemplate>
-                <DataTemplate x:DataType="models:IntroScreenModel">
-                    <ScrollView>
-                        <Grid RowDefinitions="40*,40*">
-                            <Image Source="{Binding IntroImage}" Aspect="AspectFill" Grid.Row="0"/>
-                            <VerticalStackLayout Grid.Row="1" >
-                                <Label Text="{Binding IntroTitle}" FontAttributes="Bold" FontSize="28"/>
-                                <Label Text="{Binding IntroDescription}" TextColor="Gray" FontSize="20"/>
-                            </VerticalStackLayout>
-                        </Grid>
-                    </ScrollView>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
-        <StackLayout  Orientation="Horizontal"  
-                      Grid.Row="1" >
-            <IndicatorView x:Name="indicatorView" 
-                           VerticalOptions="Center"
-                           IndicatorSize="10"
-                           IndicatorColor="LightGray"  
-                           SelectedIndicatorColor ="GreenYellow" />
-            <Frame 
-                HorizontalOptions="EndAndExpand"
-                Padding="0"
-                   CornerRadius="30"
-                    HeightRequest="60" 
-                   WidthRequest="60" 
-                   BackgroundColor="GreenYellow">
-                <Label Text="{Binding ButtonText}" TextColor="White" 
-                       FontSize="18"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Center" 
-                       VerticalTextAlignment="Center" />
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NextCommand}" />
-                </Frame.GestureRecognizers>
-            </Frame>
-        </StackLayout>
-        </Grid>
+
+    <CarouselView ItemsSource="{Binding IntroScreens}" 
+                   Position="{Binding Position}"
+                   Loop="False"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand">
+
+        <CarouselView.ItemTemplate>
+            <DataTemplate x:DataType="models:IntroScreenModel">
+                <ScrollView>
+                    <AbsoluteLayout>
+                        <Image Source="bigellipsegreen.png"
+                               AbsoluteLayout.LayoutBounds="-64, -33, 315, 317"
+                               AbsoluteLayout.LayoutFlags="None"/>
+                        <Image Source="smallellipsepurple.png"
+                                AbsoluteLayout.LayoutBounds="258, -83, 221, 227"
+                                AbsoluteLayout.LayoutFlags="None"/>
+                        <Label FontSize="40"
+                               AbsoluteLayout.LayoutBounds="0.5,112,159,49"
+                               AbsoluteLayout.LayoutFlags="XProportional"
+                               FontFamily="Montserrat">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="GYM" 
+                                          FontAttributes="Bold,Italic" />
+                                    <Span Text="ora" 
+                                          FontAttributes="None" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Text="{Binding IntroTitle}" 
+                               FontAttributes="Bold,Italic" 
+                               FontSize="32"
+                               AbsoluteLayout.LayoutBounds="9,367,393, 117"
+                               AbsoluteLayout.LayoutFlags="None"
+                               FontFamily="Montserrat"
+                               HorizontalTextAlignment="Center"  
+                               VerticalTextAlignment="Center"            
+                               LineBreakMode="WordWrap"/>
+                        <Image Source="vector.png"
+                               AbsoluteLayout.LayoutBounds="20,553, 14, 11"
+                               AbsoluteLayout.LayoutFlags="None"/>
+                        <Label Text="{Binding IntroDescription}"  
+                               FontSize="16"   
+                               AbsoluteLayout.LayoutBounds="41,547,333, 26"
+                               AbsoluteLayout.LayoutFlags="None"
+                               FontFamily="Montserrat"/>
+                        <Image Source="vector.png"
+                               AbsoluteLayout.LayoutBounds="20,602, 14, 11"
+                               AbsoluteLayout.LayoutFlags="None"/>
+                        <Label Text="{Binding IntroDescription1}"  FontSize="16"   
+                               AbsoluteLayout.LayoutBounds="41,596,185, 26"
+                               AbsoluteLayout.LayoutFlags="None"
+                               FontFamily="Montserrat"/>
+                        <Image Source="vector.png"
+                               AbsoluteLayout.LayoutBounds="20,651, 14, 11"
+                               AbsoluteLayout.LayoutFlags="None"/>
+                        <Label Text="{Binding IntroDescription2}"  FontSize="16"  
+                               AbsoluteLayout.LayoutBounds="41,645,139, 26"
+                               AbsoluteLayout.LayoutFlags="None"
+                               FontFamily="Montserrat"/>
+                        
+
+                        <Frame AbsoluteLayout.LayoutBounds="325,747, 60, 60"
+                               AbsoluteLayout.LayoutFlags="None"
+                               CornerRadius="30"
+                               HeightRequest="60" 
+                               WidthRequest="60" 
+                               BackgroundColor="#D5FF40">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.NextCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Image Source="vector1.png"
+                               AbsoluteLayout.LayoutBounds="348,770, 14, 14"
+                               AbsoluteLayout.LayoutFlags="None"/>
+
+                    </AbsoluteLayout>
+                </ScrollView>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
 </ContentPage>

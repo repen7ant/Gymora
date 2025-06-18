@@ -43,21 +43,27 @@ namespace Gymora.ViewModels
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = "Персональный фитнес-план и контроль питания!",
-                IntroDescription = "создавай индивидуальные программы отслеживай прогресс считай калории",
+                IntroDescription = "создавай индивидуальные программы",
+                IntroDescription1 = "отслеживай прогресс",
+                IntroDescription2 = "считай калории",
                 IntroImage = "gymorais"
             });
 
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = "Друзья, мотивация и прогресс!",
-                IntroDescription = "следи за прогрессом друзей делись успехами общайся",
+                IntroDescription = "следи за прогрессом друзей",
+                IntroDescription1 = "делись успехами",
+                IntroDescription2 = "общайся",
                 IntroImage = "gymorais"
             });
 
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = "Все залы в твоем телефоне!",
-                IntroDescription = "находи лучшие варианты рядом выбирай удобное время сравнивай цены",
+                IntroDescription = "находи лучшие варианты рядом",
+                IntroDescription1 = "выбирай удобное время",
+                IntroDescription2 = "сравнивай цены",
                 IntroImage = "gymorais"
             });
 

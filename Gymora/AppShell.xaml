@@ -9,6 +9,7 @@
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:IntroScreenView}"
+        Shell.NavBarIsVisible="False"
         Route="StartScreen" />
     <ShellContent
         Title="Sign In"
@@ -25,6 +26,11 @@
         ContentTemplate="{DataTemplate local:SignInSignUpView}"
         Shell.NavBarIsVisible="False"
         Route="SignInSignUp" />
+    <ShellContent
+        Title="Sign Up2"
+        ContentTemplate="{DataTemplate local:SignUpView2}"
+        Shell.NavBarIsVisible="False"
+        Route="SignUp2" />
 
     <TabBar>
         <Tab Icon="gyms.png">
@@ -48,5 +54,4 @@
                            Route="ProfilePage" />
         </Tab>
     </TabBar>
-
 </Shell>

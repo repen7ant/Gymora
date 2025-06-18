@@ -5,103 +5,96 @@
              Title="Sign Up">
     <AbsoluteLayout>
         <Image Source="ellipsegreen.png"
-           AbsoluteLayout.LayoutBounds="1.2, 0.0, 170, 170"
-           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+               AbsoluteLayout.LayoutBounds="1.2, 0.0, 170, 170"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
         <Image Source="ellipsepurple.png"
-           AbsoluteLayout.LayoutBounds="-0.3, 0.05, 200, 200"
-           AbsoluteLayout.LayoutFlags="PositionProportional"
-           />
+               AbsoluteLayout.LayoutBounds="-0.3, 0.05, 200, 200"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
         <Image Source="copybara.png"
-            AbsoluteLayout.LayoutBounds="55, 100,300, 260"
-    
-        />
+               AbsoluteLayout.LayoutBounds="55, 100,300, 260"/>
         <Image Source="bigellipsepurple.png"
-            AbsoluteLayout.LayoutBounds="1.1 , 0.75, 200, 200"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-        />
+               AbsoluteLayout.LayoutBounds="1.1 , 0.75, 200, 200"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Label Text="Добавьте ваш электронный адрес и придумайте пароль." 
+               AbsoluteLayout.LayoutBounds="50,420 , 300, 100"
+               TextColor="Black"
+               FontSize="18"
+               FontFamily="Montserrat"
+               HorizontalTextAlignment="Center"/>
 
         <Label Text="Регистрация в GYMora" 
-           AbsoluteLayout.LayoutBounds="0.6,340, 300, 70"
-           TextColor="Black"
-           FontSize="24"
-           FontFamily="Montserrat"
-           FontAttributes="Bold"
-           AbsoluteLayout.LayoutFlags="XProportional"
-            />
+               AbsoluteLayout.LayoutBounds="0.5,340, 300, 70"
+               TextColor="Black"
+               FontSize="24"
+               FontFamily="Montserrat"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutFlags="XProportional"/>
 
         <Border 
             WidthRequest="381" 
-            HeightRequest="345" 
+            HeightRequest="300" 
             Background="Black"
             StrokeShape="RoundRectangle 10"
             HorizontalOptions="Center"
-            AbsoluteLayout.LayoutBounds="0.5, 515, 200, 90"
-        AbsoluteLayout.LayoutFlags="XProportional"/>
+            AbsoluteLayout.LayoutBounds="0.5, 380, 381, 300"
+            AbsoluteLayout.LayoutFlags="XProportional"/>
         <Label Text="Email" 
-           AbsoluteLayout.LayoutBounds="40,400 , 200, 90"
-           TextColor="White"
-           FontSize="20"
-           FontFamily="Montserrat"/>
+               AbsoluteLayout.LayoutBounds="40,400 , 200, 90"
+               TextColor="White"
+               FontSize="20"
+               FontFamily="Montserrat"/>
 
         <Entry Text="{Binding Email}"
-           AbsoluteLayout.LayoutBounds="0.5, 420, 200, 80"
-           BackgroundColor="White"
-           WidthRequest="345"
-           HeightRequest="43"
-           AbsoluteLayout.LayoutFlags="XProportional"
-           />
+               AbsoluteLayout.LayoutBounds="0.5, 420, 200, 80"
+               BackgroundColor="White"
+               WidthRequest="345"
+               HeightRequest="43"
+               AbsoluteLayout.LayoutFlags="XProportional"/>
         <Label Text="Пароль" 
-           AbsoluteLayout.LayoutBounds="40,490 , 200, 90"
-           TextColor="White"
-           FontSize="20"
-           FontFamily="Montserrat"/>
+               AbsoluteLayout.LayoutBounds="40,490 , 200, 90"
+               TextColor="White"
+               FontSize="20"
+               FontFamily="Montserrat"/>
         <Entry Text="{Binding Password}" IsPassword="True"
-           AbsoluteLayout.LayoutBounds="0.5, 510, 200, 80"
-           BackgroundColor="White"
-           WidthRequest="345"
-           HeightRequest="43"
-           AbsoluteLayout.LayoutFlags="XProportional"/>
+               Placeholder="не менее 6 символов"
+               AbsoluteLayout.LayoutBounds="0.5, 510, 200, 80"
+               BackgroundColor="White"
+               WidthRequest="345"
+               HeightRequest="43"
+               AbsoluteLayout.LayoutFlags="XProportional"/>
         <Label Text="Имя пользователя" 
-           AbsoluteLayout.LayoutBounds="40,580 , 200, 90"
-           TextColor="White"
-           FontSize="20"
-           FontFamily="Montserrat"/>
-        
+               AbsoluteLayout.LayoutBounds="40,580 , 200, 90"
+               TextColor="White"
+               FontSize="20"
+               FontFamily="Montserrat"/>
         <Entry Text="{Binding Username}"
-            AbsoluteLayout.LayoutBounds="0.5, 600, 200, 80"
-            BackgroundColor="White"
-            WidthRequest="345"
-            HeightRequest="43"
-            AbsoluteLayout.LayoutFlags="XProportional"
-            />
-        
-        <Button Text="Уже есть аккаунт?" Command="{Binding NavigateSignInCommand}"
-            AbsoluteLayout.LayoutBounds="0.5, 660, 200, 80"
-            AbsoluteLayout.LayoutFlags="XProportional"
-            Background="Transparent"
-            TextColor="White"/>
+                AbsoluteLayout.LayoutBounds="0.5, 600, 200, 80"
+                BackgroundColor="White"
+                WidthRequest="345"
+                HeightRequest="43"
+                AbsoluteLayout.LayoutFlags="XProportional"/>
         <Border 
-            WidthRequest="353" 
-            HeightRequest="56" 
-            Background="#D5FF40"
-            StrokeShape="RoundRectangle 80" 
-            HorizontalOptions="Center"
-            AbsoluteLayout.LayoutBounds="0.5, 730, 200, 90"
-            AbsoluteLayout.LayoutFlags="XProportional"/>
-        <Button
-            Command= "{Binding SignUpCommand}" 
-            BackgroundColor="Transparent"
-            WidthRequest="353"
-            HeightRequest="70"
-            AbsoluteLayout.LayoutBounds="0.5, 730, 200, 90"
-            AbsoluteLayout.LayoutFlags="XProportional"
-            Text="Войти"
-            FontSize="20"
-            FontFamily="Montserrat"
-            TextColor="Black"/>
-        
-        
+    WidthRequest="60" 
+    HeightRequest="60" 
+    Background="#D5FF40"
+    StrokeShape="Ellipse 80" 
+    HorizontalOptions="Center"
+    AbsoluteLayout.LayoutBounds="0.5, 750, 60, 60"
+    AbsoluteLayout.LayoutFlags="XProportional"/>
 
+        <Button
+    Command= "{Binding SignUpCommand}" 
+    BackgroundColor="Transparent"
+    WidthRequest="60"
+    HeightRequest="60"
+    AbsoluteLayout.LayoutBounds="0.5, 730, 200, 90"
+    AbsoluteLayout.LayoutFlags="XProportional"
+    FontSize="20"
+    FontFamily="Montserrat"
+    TextColor="Black"/>
+        <Image Source="vector1.png"
+                AbsoluteLayout.LayoutBounds="0.5,770, 14, 14"
+                AbsoluteLayout.LayoutFlags="XProportional"/>
     </AbsoluteLayout>
 
 

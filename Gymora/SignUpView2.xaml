@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gymora.SignUpView2"
+             Title="SignUpView2">
+    <AbsoluteLayout>
+        <Image Source="ellipsegreen.png"
+               AbsoluteLayout.LayoutBounds="1.2, 0.0, 150, 170"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+      
+        <Image Source="ellipsepurple.png"
+               AbsoluteLayout.LayoutBounds="-0.3, 0.9, 200, 200"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>  
+        
+        <Label AbsoluteLayout.LayoutBounds="0.5,50, 300, 50"
+               HorizontalOptions="Center"
+               TextColor="Black"
+               FontSize="24"
+               FontFamily="Montserrat"
+               AbsoluteLayout.LayoutFlags="XProportional">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Регистрация в GYM" 
+                            FontAttributes="Bold"/>
+                            <Span Text="ora" 
+                            FontAttributes="None"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+        </Label>
+        
+        <Label Text="Заполни свой профиль.                           Или нажми далее и заполни позже." 
+               AbsoluteLayout.LayoutBounds="0.5,100 ,350, 50"
+               AbsoluteLayout.LayoutFlags="XProportional"
+               TextColor="Black"
+               FontSize="18"
+               FontFamily="Montserrat"
+               HorizontalTextAlignment="Center"/>
+       
+        <Image x:Name="ProfilePhoto" 
+               Source="userellipse.png"
+               AbsoluteLayout.LayoutBounds="0.5, 150, 100, 100"
+               AbsoluteLayout.LayoutFlags="XProportional"/>
+        
+        <Image Source="user.png"        
+               AbsoluteLayout.LayoutBounds="0.5, 185, 28, 28"
+               AbsoluteLayout.LayoutFlags="XProportional"/>
+        
+        <Border 
+            WidthRequest="150" 
+            HeightRequest="27" 
+            Background="#D5FF40"
+            StrokeShape="RoundRectangle 15" 
+            HorizontalOptions="Center"
+            AbsoluteLayout.LayoutBounds="0.5, 260, 150, 27"
+            AbsoluteLayout.LayoutFlags="XProportional"/>
+        
+        <Button
+            Text="Добавить фото"
+            Command="{Binding LoadPhotoCommand}" 
+            BackgroundColor="Transparent"
+            FontSize="15"
+            FontFamily="Montserrat"
+            TextColor="Black"
+            AbsoluteLayout.LayoutBounds="0.5, 253, 150, 40"
+            AbsoluteLayout.LayoutFlags="XProportional"/>
+        
+        <Border 
+            WidthRequest="381" 
+            HeightRequest="374" 
+            Background="Black"
+            StrokeShape="RoundRectangle 10"
+            HorizontalOptions="Center"
+            AbsoluteLayout.LayoutBounds="0.5, 300, 381, 374"
+            AbsoluteLayout.LayoutFlags="XProportional"/>
+        
+        <Label Text="В какой зал ты ходишь?" 
+               AbsoluteLayout.LayoutBounds="40,320 , 210, 20"
+               TextColor="White"
+               FontSize="16"
+               FontAttributes="Bold"
+               FontFamily="Montserrat"/>
+
+        <Entry Text="{Binding Gym}" Placeholder="название зала / “не хожу”"
+               AbsoluteLayout.LayoutBounds="33,350 , 345, 43"
+               BackgroundColor="White"
+               WidthRequest="345"
+               HeightRequest="43"/>
+        
+        <Label Text="Дата рождения" 
+               AbsoluteLayout.LayoutBounds="40,400 , 210, 20"
+               TextColor="White"
+               FontSize="16"
+               FontAttributes="Bold"
+               FontFamily="Montserrat"/>
+        <DatePicker Date="{Binding Birthdate}"
+                    MaximumDate="2025-12-31"
+                    MinimumDate="1900-01-01"
+                    AbsoluteLayout.LayoutBounds="33,430 , 345, 43"
+                    BackgroundColor="White"
+                    FontSize="18"
+                    TextColor="Black"/>
+
+        <Label Text="Какая у тебя цель?" 
+               AbsoluteLayout.LayoutBounds="40,480 , 210, 20"
+               TextColor="White"
+               FontSize="16"
+               FontAttributes="Bold"
+               FontFamily="Montserrat"/>
+
+        <Entry Text="{Binding Goal}"  
+               AbsoluteLayout.LayoutBounds="33,510 , 345, 43"
+               BackgroundColor="White"
+               WidthRequest="345"
+               HeightRequest="43"/>
+        
+        <Label Text="Тренировочные дни" 
+               AbsoluteLayout.LayoutBounds="0.5,570 , 160, 20"
+               AbsoluteLayout.LayoutFlags="XProportional"
+               TextColor="White"
+               FontSize="16"
+               FontAttributes="Bold"
+               FontFamily="Montserrat"/>
+
+        <StackLayout 
+            AbsoluteLayout.LayoutBounds="30, 600, 350, 200"
+            AbsoluteLayout.LayoutFlags="None"
+            Spacing="15">
+            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Days}" Spacing="23">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" Spacing="1"
+                                     WidthRequest="30"  
+                                     HeightRequest="30"                                  
+                                     HorizontalOptions="Center">
+                            <CheckBox IsChecked="{Binding IsSelected}" VerticalOptions="Center"
+                                      Color="White"   
+                            />
+                            <Label Text="{Binding Name}" VerticalTextAlignment="Start"
+                                   HorizontalOptions="Center"
+                                   TextColor="White"
+                                   Margin="0,-10,0,0"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+        </StackLayout>
+
+        <Border 
+            WidthRequest="60" 
+            HeightRequest="60" 
+            Background="#D5FF40"
+            StrokeShape="Ellipse 80" 
+            HorizontalOptions="Center"
+            AbsoluteLayout.LayoutBounds="0.5, 750, 60, 60"
+            AbsoluteLayout.LayoutFlags="XProportional"/>
+
+        <Button
+            Command= "{Binding NextCommand}" 
+            BackgroundColor="Transparent"
+            WidthRequest="60"
+            HeightRequest="60"
+            AbsoluteLayout.LayoutBounds="0.5, 730, 60, 60"
+            AbsoluteLayout.LayoutFlags="XProportional"
+            FontSize="20"
+            FontFamily="Montserrat"
+            TextColor="Black"/>
+
+        <Image Source="vector1.png"
+               AbsoluteLayout.LayoutBounds="0.5,770, 14, 14"
+               AbsoluteLayout.LayoutFlags="XProportional"/>
+    </AbsoluteLayout>
+</ContentPage>

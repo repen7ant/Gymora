@@ -3,6 +3,7 @@ using Firebase.Auth.Providers;
 using Microsoft.Extensions.Logging;
 using Gymora.ViewModels;
 using Firebase.Auth.Repository;
+using Microsoft.Maui.Handlers;
 
 
 namespace Gymora
@@ -19,10 +20,13 @@ namespace Gymora
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                }).
+                ConfigureMauiHandlers(handlers => {
+                    handlers.AddHandler(typeof(Entry), typeof(EntryHandler));
+                }); 
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
             {
@@ -42,6 +46,7 @@ namespace Gymora
             builder.Services.AddSingleton<SignUpViewModel>();
             builder.Services.AddTransient<SignInSignUpViewModel>();
             builder.Services.AddTransient<SignInSignUpView>();
+            builder.Services.AddSingleton<ProfilePage>();
 
             return builder.Build();
         }
