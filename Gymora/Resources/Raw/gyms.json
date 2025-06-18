@@ -2,24 +2,17 @@
   {
     "Name": "GreenFitness",
     "_2GISLink": "https://2gis.ru/ekaterinburg/firm/70000001063026484?m=60.599801%2C56.829805%2F16",
-    "Rating": 4.4,
+    "Rating": 4.5,
     "Images": [
-      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test1.png",
-      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test2.png",
-      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test3.png"
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Green%20Fitness%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Green%20Fitness%202.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Green%20Fitness%203.PNG"
     ],
-    "Location": "ул. 8 марта, 46",
+    "Location": "Ул. 8 марта, 46",
+    "District": "Ленинский",
     "Prices": [
       {
-        "name": "Lunch (c 12:00 до 16:00)",
-        "prices": {
-          "12 месяцев": 12000,
-          "9 месяцев": 11000,
-          "6 месяцев": 9000
-        }
-      },
-      {
-        "name": "Безлимит (24/7, групповые программы включены в стоимость карты)",
+        "name": "Абонемент безлимит",
         "prices": {
           "12 месяцев": 29000,
           "9 месяцев": 24000,
@@ -27,7 +20,7 @@
         }
       },
       {
-        "name": "Дневной (с 7:00 до 17:00, в выходные дни — круглосуточно)",
+        "name": "Абонемент дневной",
         "prices": {
           "12 месяцев": 19000,
           "9 месяцев": 16000,
@@ -35,7 +28,7 @@
         }
       },
       {
-        "name": "Ночной (с 0:00 до 7:00)",
+        "name": "Абонемент ночной",
         "prices": {
           "12 месяцев": 12000,
           "9 месяцев": 11000,
@@ -46,24 +39,24 @@
     "WorkingHours": [
       "Круглосуточно"
     ],
-    "Number": "+7 (343) 363‒30‒03, +7 (922) 138‒31‒73",
-    "Website": "greenfit-ekb.ru",
-    "Latitude": 56.83496545091609,
-    "Longitude": 60.55616087455913
+    "Number": "+7 (343) 363-3003",
+    "Website": "https://greenfit-ekb.ru/",
+    "Latitude": 56.8289869,
+    "Longitude": 60.596262
   },
   {
     "Name": "AversFit",
-    "_2GISLink": "https://go.2gis.com/3XxhB",
-    "Rating": 4.5,
+    "_2GISLink": "https://2gis.ru/ekaterinburg/firm/1267165676582361?m=60.585742%2C56.839309%2F16",
+    "Rating": 5.0,
     "Images": [
-      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test1.png",
-      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test2.png",
-      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/test3.png"
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/AversFit%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/AversFit%202.PNG"
     ],
-    "Location": "ул. Шейнкмана, 21",
+    "Location": "Ул. Шейнкмана, 21",
+    "District": "Верх-Исетский",
     "Prices": [
       {
-        "name": "Дневной (пн—пт до 17:00, сб—вс с 9:00 до 23:00, все зоны клуба, групповые тренировки, стартовые тренировки, заморозка карты)",
+        "name": "Дневная",
         "prices": {
           "6 месяцев": 34000,
           "9 месяцев": 45000,
@@ -71,7 +64,7 @@
         }
       },
       {
-        "name": "Стандарт (посещение клуба в часы работы, все зоны клуба, групповые тренировки по расписанию, стартовые тренировки, заморозка карты)",
+        "name": "Стандарт",
         "prices": {
           "3 месяца": 20900,
           "6 месяцев": 39000,
@@ -80,19 +73,316 @@
         }
       },
       {
-        "name": "Максимум (посещение клуба в часы работы, все зоны клуба, групповые тренировки по расписанию, 20 персональных тренировок, 90 дней заморозки, 50 минут солярия, аренда шкафчика)",
+        "name": "Максимум",
         "prices": {
           "12 месяцев": 91000
         }
       }
     ],
     "WorkingHours": [
-      "пн — пт: с 07:00 до 23:00",
-      "сб — вс: с 09:00 до 23:00"
+      "Пн-Пт 9:00-23:00",
+      "Сб-Вс 8:00-22:00"
     ],
-    "Number": "+7 (343) 389‒24‒00",
-    "Website": "aversfit.ru",
-    "Latitude": 56.83958486981719,
-    "Longitude": 60.58591225314231
+    "Number": "+7 343 389-24-00",
+    "Website": "https://aversfit.ru/",
+    "Latitude": 56.8394965,
+    "Longitude": 60.5833687
+  },
+  {
+    "Name": "Bright Prime",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/search/bright%20prime/firm/70000001052000089/60.524086%2C56.776786?m=60.524115%2C56.776813%2F15.08",
+    "Rating": 3.9,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Bright%20Prime%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Bright%20Prime%202.PNG"
+    ],
+    "Location": "Улица Академика Парина, 16/3",
+    "District": "Академический",
+    "Prices": [
+      {
+        "name": "Абонемент",
+        "prices": {
+          "3 месяца": 30000,
+          "7 месяцев": 50000,
+          "10 месяцев": 59000
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн-Пт 6:00-0:00",
+      "Сб-Вс 8:00-22:00"
+    ],
+    "Number": "+7 (343) 253-52-51",
+    "Website": "https://prime.brightfit.ru/",
+    "Latitude": 56.7861615,
+    "Longitude": 60.4977372
+  },
+  {
+    "Name": "Fitness house",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/firm/70000001077792690?m=60.576335%2C56.855595%2F16",
+    "Rating": 4.5,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Fitness%20House%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Fitness%20House%202.PNG"
+    ],
+    "Location": "​Готвальда, 24/2",
+    "District": "Железнодорожный",
+    "Prices": [
+      {
+        "name": "Junior",
+        "prices": {
+          "1 месяц": 1590
+        }
+      },
+      {
+        "name": "Фитнес + спа",
+        "prices": {
+          "1 месяц": 3490
+        }
+      },
+      {
+        "name": "Фитнес+бассейн+спа",
+        "prices": {
+          "1 месяц": 5500
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн-Пт 7:00-23:00",
+      "Сб-Вс 8:00-22:00"
+    ],
+    "Number": "+7 (343) 318-31-30",
+    "Website": "https://www.fitnesshouse.ru/index-ekaterenburg.html?id=10",
+    "Latitude": 56.8555529,
+    "Longitude": 60.5737307
+  },
+  {
+    "Name": "IRON GYM",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/search/IRON%20GYM/firm/70000001027937990?m=60.654248%2C56.827499%2F12.87%2Fp%2F12.27%2Fr%2F1.7",
+    "Rating": 4.3,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Iron%20Gym%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Iron%20Gym%202.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Iron%20Gym%203.PNG"
+    ],
+    "Location": "Улица Владимира Высоцкого, 6Б",
+    "District": "Кировский",
+    "Prices": [
+      {
+        "name": "Безлимит",
+        "prices": {
+          "1 месяц": 3500,
+          "3 месяца": 8000,
+          "6 месяцев": 11000,
+          "12 месяцев": 15000
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн-Пт 7:00-23:00",
+      "Сб-Вс 9:00-22:00"
+    ],
+    "Number": "+7 (343) 289‒28‒12",
+    "Website": "https://irongym24.ru/",
+    "Latitude": 56.83973,
+    "Longitude": 60.6705203
+  },
+  {
+    "Name": "X-fit",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/firm/70000001035700019",
+    "Rating": 3.4,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/xfit%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/xfit%202.PNG"
+    ],
+    "Location": "Улица Ткачей, 17",
+    "District": "Октябрьский",
+    "Prices": [
+      {
+        "name": "Абонемент",
+        "prices": {
+          "1 месяц": 2500,
+          "6 месяцев": 6500,
+          "12 месяцев": 8000
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн-Пт 7:00-0:00",
+      "Сб-Вс 8:00-23:00"
+    ],
+    "Number": "+7(343)312-99-99",
+    "Website": "https://www.xfit.ru/club/ekaterinburg/",
+    "Latitude": 56.8164777,
+    "Longitude": 60.6284014
+  },
+  {
+    "Name": "Golden Gym",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/firm/70000001007355574?m=60.617063%2C56.798014%2F16",
+    "Rating": 4.6,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/GoldenGym%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/GoldenGym%202.PNG"
+    ],
+    "Location": "ул. Юлиуса Фучика, д. 3",
+    "District": "Чкаловский",
+    "Prices": [
+      {
+        "name": "Год за 8500",
+        "prices": {
+          "12 месяцев": 8500
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн-Пт 6:00-0:00",
+      "Сб-Вс 8:00-22:00"
+    ],
+    "Number": "+7 (343) 286‒75-83",
+    "Website": "www.golden-gym.ru",
+    "Latitude": 56.798228,
+    "Longitude": 60.6149183
+  },
+  {
+    "Name": "Darkfit Gym",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/firm/70000001081350351?m=60.63537%2C56.885911%2F16",
+    "Rating": 4.4,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Darkfit%20Gym%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Darkfit%20Gym%202.PNG"
+    ],
+    "Location": "Улица Старых Большевиков, 3д",
+    "District": "Орджоникидзевский",
+    "Prices": [
+      {
+        "name": "Абонемент",
+        "prices": {
+          "1 месяц": 3490,
+          "6 месяцев": 14990,
+          "12 месяцев": 24990
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн — Пт 07:00–23:00",
+      "Сб — Вс 08:00–22:00"
+    ],
+    "Number": "+7 (343) 288‒55‒22",
+    "Website": "darkfit.ru",
+    "Latitude": 56.8836727,
+    "Longitude": 60.6337007
+  },
+  {
+    "Name": "Bright Fit",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/branches/1267174266680244/firm/70000001032118252/60.623046%2C56.821596?m=60.623046%2C56.821596%2F12.2",
+    "Rating": 4.3,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Bright%20Fit%201.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Bright%20Fit%202.PNG"
+    ],
+    "Location": "Улица Тверитина, 45",
+    "District": "Октябрьский",
+    "Prices": [
+      {
+        "name": "Абонемент",
+        "prices": {
+          "3 месяца": 30000,
+          "7 месяцев": 50000,
+          "10 месяцев": 59000
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн-Пт 6:00-0:00",
+      "Сб-Вс 8:00-22:00"
+    ],
+    "Number": "+7 (343) 311-01-23",
+    "Website": "https://xn--80abwd7aobo.xn--p1ai/tveritina-45",
+    "Latitude": 56.8215975,
+    "Longitude": 60.6211938
+  },
+  {
+    "Name": "Bright Fit",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/branches/1267174266680244/firm/70000001080499221/60.609086%2C56.895793?m=60.609086%2C56.895793%2F12.2",
+    "Rating": 3.5,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Bright%20Fit2.1.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Bright%20Fit2.2.PNG"
+    ],
+    "Location": "Улица Победы, 14А",
+    "District": "Орджоникидзовский",
+    "Prices": [
+      {
+        "name": "Абонемент",
+        "prices": {
+          "3 месяца": 30000,
+          "7 месяцев": 50000,
+          "10 месяцев": 59000
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Пн-Пт 7:00-23:00",
+      "Сб-Вс 6:00-22:00"
+    ],
+    "Number": "+7 (343) 345-00-55",
+    "Website": "https://xn--80abwd7aobo.xn--p1ai/tveritina-45",
+    "Latitude": 56.8959993,
+    "Longitude": 60.606115
+  },
+  {
+    "Name": "Spirit Fitness",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/search/spirit%20fitness/firm/70000001090456085/60.596141%2C56.830184?m=60.596141%2C56.830184%2F12.2",
+    "Rating": 4.3,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Spirit%20fitness.PNG",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Spirit%20fitness%202.PNG"
+    ],
+    "Location": "Улица Тверитина, 45",
+    "District": "Ленинский",
+    "Prices": [
+      {
+        "name": "Абонемент",
+        "prices": {
+          "1 месяц": 2000,
+          "3 месяца": 5100
+        }
+      }
+    ],
+    "WorkingHours": [
+      "Круглосуточно"
+    ],
+    "Number": "+7 (343) 385 59 14",
+    "Website": "https://spiritfit.ru/ekb/clubs/vaynera/",
+    "Latitude": 56.8215975,
+    "Longitude": 60.6211938
+  },
+  {
+    "Name": "Метроfitness",
+    "_2GISLink": "https://2gis.ru/ekaterinburg/search/metrofitness/firm/70000001047643505/60.634027%2C56.856499?m=60.634027%2C56.856499%2F12.2",
+    "Rating": 4.6,
+    "Images": [
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Metrofitness%201.PNG7008",
+      "https://raw.githubusercontent.com/repen7ant/Gymora/main/gymImages/Metrofitness%202.PNG"
+    ],
+    "Location": "Улица Уральская, 61а",
+    "District": "Кировский район",
+    "Prices": [
+      {
+        "name": "Безлимит",
+        "prices": {
+          "8 месяцев": 4600,
+          "12 месяцев": 6200,
+          "18 месяцев": 7900
+        }
+      }
+    ],
+    "WorkingHours": [
+      "круглосуточно"
+    ],
+    "Number": "+7 (343) 288‒5‒333",
+    "Website": "metrofitness.ru",
+    "Latitude": 56.8583281,
+    "Longitude": 60.6328887
   }
 ]

@@ -1,0 +1,92 @@
+[
+  {
+    "Username": "BearMode",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend1.jpg",
+    "CompletedWorkouts": 215,
+    "Friends": 15,
+    "BirthDate": "1991-05-12",
+    "Gym": "GreenFitness",
+    "Goal": "Подкачаться к лету"
+  },
+  {
+    "Username": "LightWeightBabe",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend2.jpg",
+    "CompletedWorkouts": 178,
+    "Friends": 4,
+    "BirthDate": "2003-08-25",
+    "Gym": "AversFit",
+    "Goal": "Похудеть на 5 кг"
+  },
+  {
+    "Username": "BabushkaSquat",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend3.jpg",
+    "CompletedWorkouts": 125,
+    "Friends": 12,
+    "BirthDate": "2005-11-03",
+    "Gym": "Bright Prime",
+    "Goal": "Подтянуть фигуру"
+  },
+  {
+    "Username": "SiberianWolf",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend4.jpg",
+    "CompletedWorkouts": 156,
+    "Friends": 8,
+    "BirthDate": "1996-02-18",
+    "Gym": "Fitness house",
+    "Goal": "Стать выносливее"
+  },
+  {
+    "Username": "SosiskaKiller",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend5.jpg",
+    "CompletedWorkouts": 289,
+    "Friends": 9,
+    "BirthDate": "1989-07-30",
+    "Gym": "IRON GYM",
+    "Goal": "Накачать бицепс 40 см"
+  },
+  {
+    "Username": "MatryoshkaFit",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend6.jpg",
+    "CompletedWorkouts": 124,
+    "Friends": 6,
+    "BirthDate": "2004-04-22",
+    "Gym": "X-fit",
+    "Goal": "Похудеть в бедрах"
+  },
+  {
+    "Username": "NutShell245",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend7.jpg",
+    "CompletedWorkouts": 201,
+    "Friends": 6,
+    "BirthDate": "2002-09-14",
+    "Gym": "Golden Gym",
+    "Goal": "Сесть на шпагат"
+  },
+  {
+    "Username": "UralTitan",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend8.jpg",
+    "CompletedWorkouts": 267,
+    "Friends": 8,
+    "BirthDate": "2007-12-05",
+    "Gym": "Darkfit Gym",
+    "Goal": "Набрать 10 кг мышц"
+  },
+  {
+    "Username": "BalalaikaCardio",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend9.jpg",
+    "CompletedWorkouts": 187,
+    "Friends": 10,
+    "BirthDate": "2005-06-28",
+    "Gym": "Bright Fit",
+    "Goal": "Бегать 10 км без остановки"
+  },
+  {
+    "Username": "Domashniy",
+    "Picture": "https://raw.githubusercontent.com/repen7ant/Gymora/main/friendsPictures/friend10.jpg",
+    "CompletedWorkouts": 233,
+    "Friends": 9,
+    "BirthDate": "2003-03-17",
+    "Gym": "Spirit Fitness",
+    "Goal": "Убрать живот"
+  }
+]
