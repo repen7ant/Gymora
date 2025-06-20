@@ -60,17 +60,17 @@ public partial class CreateExercisePage : ContentPage
         sets.Add(new ExerciseSet { SetNumber = sets.Count + 1 });
     }
 
-    private void OnSaveExerciseClicked(object sender, EventArgs e)
+    private async void OnSaveExerciseClicked(object sender, EventArgs e)
     {
         if (string.IsNullOrWhiteSpace(ExerciseNameEntry.Text))
         {
-            DisplayAlert("Ошибка", "Введите название упражнения", "OK");
+            await DisplayAlert("Ошибка", "Введите название упражнения", "OK");
             return;
         }
 
         if (MuscleGroupPicker.SelectedIndex == -1)
         {
-            DisplayAlert("Ошибка", "Выберите группу мышц", "OK");
+            await DisplayAlert("Ошибка", "Выберите группу мышц", "OK");
             return;
         }
 
@@ -78,7 +78,7 @@ public partial class CreateExercisePage : ContentPage
 
         if (sets.Count == 0)
         {
-            DisplayAlert("Ошибка", "Добавьте хотя бы один подход", "OK");
+            await DisplayAlert("Ошибка", "Добавьте хотя бы один подход", "OK");
             return;
         }
 
@@ -86,7 +86,7 @@ public partial class CreateExercisePage : ContentPage
         {
             if (set.Weight == null || set.Reps == null)
             {
-                DisplayAlert("Ошибка", "Заполните все поля для подходов", "OK");
+                await DisplayAlert("Ошибка", "Заполните все поля для подходов", "OK");
                 return;
             }
         }
@@ -96,6 +96,6 @@ public partial class CreateExercisePage : ContentPage
         _exercise.Sets = new List<ExerciseSet>(sets);
 
         ExerciseCreated?.Invoke(this, _exercise);
-        Navigation.PopModalAsync();
+        await Navigation.PopModalAsync();
     }
 }
