@@ -5,12 +5,6 @@
         public AppShell()
         {
             InitializeComponent();
-            RegisterRoutes();
-        }
-
-        private void RegisterRoutes()
-        {
-            Routing.RegisterRoute("MainPage", typeof(MainPage));
         }
     }
 }
